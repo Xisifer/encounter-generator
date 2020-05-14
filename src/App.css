@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+
+}
+
+@font-face
+{
+  font-family: itc-symbol-lt-bold;
+  src: url('./itc-symbol-lt-bold.ttf'),
+  url('itc-symbol-lt-bold.ttf');
 }
 
 .App-logo {
@@ -36,23 +44,54 @@
     transform: rotate(360deg);
   }
 }
-.results {
-  width:15%;
+
+body {
+  background-color:rgb(54,57,53) !important;
+  color:white !important;
+}
+
+
+#results {
+  width:40%;
+  height:600px;
+  right:20%;
+  position: absolute;
+  /* border: 5px solid pink; */
+  display: block !important;
+}
+.discord-text {
+  width:20%;
   height:300px;
   right:15%;
   position: absolute;
   /* border: 5px solid red; */
   display: block !important;
 }
-.buttons {
+
+#button-area {
   width:15%;
   height:300px;
   left:15%;
   position: absolute;
+  display:grid;
   /* border: 5px solid green; */
 }
-.result {
+
+#main-area {
+  /* background-color:green; */
+  height:600px;
+}
+
+.btn {
+  margin-top:1rem;
+}
+
+#results {
   font-size:2rem;
+}
+#text-area {
+  border:5px solid orange;
+  display:none;
 }
 .btn-dark {
   display: flex !important;
