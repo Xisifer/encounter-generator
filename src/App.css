@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+.results {
+  width:33%;
+  height:300px;
+  right:15%;
+  position: absolute;
+  border: 5px solid red;
+  display: block !important;
+}
+.buttons {
+  width:33%;
+  height:300px;
+  left:15%;
+  position: absolute;
+  border: 5px solid green;
+}
+.result {
+  font-size:2rem;
+}
+.btn-dark {
+  display: flex !important;
+}
