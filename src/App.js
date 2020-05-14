@@ -67,12 +67,35 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // render() {
   function typeGenerator() {
-    var randomType = Math.floor(Math.random() * (matchType.length))
-    console.log(matchType[randomType])
+    var randomType = Math.floor(Math.random() * (matchType.length));
+
     document.getElementById('match-type-result').innerHTML = matchType[randomType];
-    // match-type-result.innerHTML(matchType[randomType])
   }
 
+
+  function locationGenerator() {
+    var randomLocation = Math.floor(Math.random() * (matchLocation.length));
+    console.log(matchLocation[randomLocation])
+    document.getElementById('match-location-result').innerHTML = matchLocation[randomLocation];
+  }
+
+  function enemyGenerator() {
+    var randomEnemy = Math.floor(Math.random() * (matchEnemy.length));
+    console.log(matchEnemy[randomEnemy])
+    document.getElementById('enemy-type-result').innerHTML = matchEnemy[randomEnemy];
+  }
+
+  function equipmentGenerator() {
+    var randomEquipment = Math.floor(Math.random() * (matchGear.length));
+    console.log(matchGear[randomEquipment])
+    document.getElementById('match-equipment-result').innerHTML = matchGear[randomEquipment];
+  }
+
+  function rulesGenerator() {
+    var randomRules = Math.floor(Math.random() * (matchRules.length));
+    console.log(matchRules[randomRules])
+    document.getElementById('rules-result').innerHTML = matchRules[randomRules];
+  }
 
 
 
@@ -99,14 +122,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         <Button 
         variant="dark" 
         size="lg" 
-        id="match-location-button">
+        id="match-location-button"
+        onClick={() => locationGenerator()}>
           Match Location
         </Button>
 
         <Button 
         variant="dark" 
         size="lg" 
-        id="enemy-type-button">
+        id="enemy-type-button"
+        onClick={() => enemyGenerator()}>
           Enemy Type
         </Button>
 
@@ -114,7 +139,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         <Button 
         variant="dark" 
         size="lg" 
-        id="match-gear-button">
+        id="match-equipment-button"
+        onClick={() => equipmentGenerator()}>
           Equipment Rules
         </Button>
 
@@ -122,16 +148,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         <Button 
         variant="dark" 
         size="lg" 
-        id="rules-button">
+        id="rules-button"
+        onClick={() => rulesGenerator()}>
           Special Rules?
         </Button>
         
       </div>
       <div className="results">
-        <div className="result" id="match-type-result">THING1</div>
-        <div className="result" id="match-location-result">THING2</div>
+        <div className="result" id="match-type-result"></div>
+        <div className="result" id="match-location-result"></div>
         <div className="result" id="enemy-type-result">THING3</div>
-        <div className="result" id="match-gear-result">THING4</div>
+        <div className="result" id="match-equipment-result">THING4</div>
         <div className="result" id="rules-result">THING5</div>
       </div>
     </div>
