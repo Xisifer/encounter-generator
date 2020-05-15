@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -55,6 +55,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         'Poor Visibility',
         'Close Combat',
         'Allied Forces',
+        'None',
+        'None',
+        'None',
+        'None',
         'None'
       ]
       let matchGear = [

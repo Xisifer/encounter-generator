@@ -5,9 +5,8 @@
 
 @font-face
 {
-  font-family: itc-symbol-lt-bold;
-  src: url('./itc-symbol-lt-bold.ttf'),
-  url('itc-symbol-lt-bold.ttf');
+  font-family: "SWfont";
+  src: url('./fonts/SWfont.ttf') format('truetype');
 }
 
 .App-logo {
@@ -46,6 +45,7 @@
 }
 
 body {
+  font-family:'SWfont';
   background-color:rgb(54,57,53) !important;
   color:white !important;
 }
