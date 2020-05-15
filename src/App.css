@@ -49,7 +49,9 @@ body {
   background-color:rgb(54,57,53) !important;
   color:white !important;
 }
-
+.result {
+  display:inline;
+}
 
 #results {
   width:40%;
@@ -57,7 +59,7 @@ body {
   right:20%;
   position: absolute;
   /* border: 5px solid pink; */
-  display: block !important;
+  display: none;
 }
 .discord-text {
   width:20%;
@@ -65,11 +67,11 @@ body {
   right:15%;
   position: absolute;
   /* border: 5px solid red; */
-  display: block !important;
+  display: none !important;
 }
 
 #button-area {
-  width:15%;
+  width:45%;
   height:300px;
   left:15%;
   position: absolute;
@@ -82,17 +84,22 @@ body {
   height:600px;
 }
 
-.btn {
+
+
+.result {
+  display: inline;
+  font-size:2rem;
+  margin-left:1rem;
   margin-top:1rem;
 }
 
-#results {
-  font-size:2rem;
-}
+
 #text-area {
   border:5px solid orange;
   display:none;
 }
-.btn-dark {
-  display: flex !important;
+
+
+.button-group {
+  display:flex;
 }
