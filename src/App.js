@@ -85,14 +85,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     // Roll on the MatchType table to get a result.
     let randomType = matchType[Math.floor(Math.random() * (matchType.length))];
 
-    // Compare our MatchType result to the MAtchType state
+    // Compare our MatchType result to the MatchType state
     if(randomType === matchTypeState) {
     // If it's a duplicate roll, reroll.
-    console.log("Duplicate detected! Rerolling...");
       typeGenerator();
     } else {
     // Store this roll into the MatchType state.
-    console.log("Unique roll! Printing out...");
     setMatchTypeState(randomType);
     }
   }
@@ -103,14 +101,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     // Roll on the MatchType table to get a result.
     let randomLocation = matchLocation[Math.floor(Math.random() * (matchLocation.length))];
 
-    // Compare our MatchType result to the MAtchType state
+    // Compare our MatchType result to the MatchType state
     if(randomLocation === matchLocationState) {
     // If it's a duplicate roll, reroll.
-    console.log("Duplicate detected! Rerolling...");
       locationGenerator();
     } else {
     // Store this roll into the MatchType state.
-    console.log("Unique roll! Printing out...");
     setMatchLocationState(randomLocation);
     }
   }
