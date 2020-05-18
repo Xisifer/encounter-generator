@@ -75,13 +75,16 @@ body {
   height:300px;
   left:15%;
   position: absolute;
-  display:grid;
+  display:contents;
   /* border: 5px solid green; */
 }
 
 #main-area {
   /* background-color:green; */
   height:600px;
+  width:50%;
+  left:30%;
+  position:relative;
 }
 
 
@@ -93,6 +96,10 @@ body {
   margin-top:1rem;
 }
 
+.btn {
+  display:grid !important;
+}
+
 
 #text-area {
   border:5px solid orange;
@@ -101,5 +108,5 @@ body {
 
 
 .button-group {
-  display:flex;
+  display:inline;
 }
