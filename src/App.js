@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   const [matchLocationState, setMatchLocationState]=React.useState(null)
 
 
+
       let matchType = [
         'Duel',
         'Skirmish',
@@ -79,18 +80,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         'Legendary'
       ]
 
+    function christmas() {
+      console.log("Merry Santa Day!");
+    }
 
   const typeGenerator = () => {
-
+    console.log("entering the typeGenerator function...");
     // Roll on the MatchType table to get a result.
+    console.log("Rolling for random match");
     let randomType = matchType[Math.floor(Math.random() * (matchType.length))];
 
     // Compare our MatchType result to the MatchType state
+    console.log("is this a duplicate?");
     if(randomType === matchTypeState) {
     // If it's a duplicate roll, reroll.
+    console.log("Duplicate detected! Rerolling...");
       typeGenerator();
     } else {
     // Store this roll into the MatchType state.
+    console.log("Unique roll detected! Storing into state.");
     setMatchTypeState(randomType);
     }
   }
