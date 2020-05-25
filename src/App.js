@@ -15,7 +15,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         'Duel',
         'Skirmish',
         'Dogfight',
-        'Horde'
+        'Horde',
+        'Tournament',
+        'Social',
+        'Huttball'
       ]
       let matchLocation = [
         'Stoval Outpost',
