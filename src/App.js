@@ -292,6 +292,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     <div className="App">
       <h1>Combat Trials Encounter Randomizer!</h1>
       <p>Click the button to obtain a random result from the table in the Combat Trials document. This list is only updated by hand, so far.</p>
+      <p>Last Update: 10/26/20</p>
       <div id="main-area">
       <div id="button-area">
         <div className="button-group">
