@@ -307,7 +307,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
     document.getElementById("rules-result1").innerHTML = matchRules[randomRules1];
     document.getElementById("rules-between").innerHTML = "OR ";
-    $("rules-result2").innerHTML = matchRules[randomRules2];
+    document.getElementById("rules-result2").innerHTML = matchRules[randomRules2];
 
   }
 
