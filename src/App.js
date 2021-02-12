@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.css';
-import {Button} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "./App.css";
+import {Button} from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
   function App() {
@@ -12,194 +12,231 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
       let matchType = [
-        'Skirmish',
-        'Skirmish',
-        'Skirmish',
-        'Skirmish',
-        'Duel',
-        'Duel',
-        'Duel',
-        'Horde',
-        'Horde',
-        'Horde',
-        'Hunt',
-        'Hunt',
-        'Capture',
-        'Capture',
-        'Dogfight',
-        'Dogfight',
-        'Tournament',
-        'Tournament',
-        'Battle',
-        'Battle',
-        'Social',
-        'Huttball',
-        'Foot Race',
-        'Planetary Race',
-        'Space Race',
-        'Raid Boss',
-        'Jailbreak',
-        'Heist',
-        'Fucking Run'
+        "Skirmish",
+        "Skirmish",
+        "Skirmish",
+        "Skirmish",
+        "Skirmish",
+        "Skirmish",
+        "Duel",
+        "Duel",
+        "Duel",
+        "Horde",
+        "Horde",
+        "Horde",
+        "Hunt",
+        "Hunt",
+        "Capture",
+        "Capture",
+        "Dogfight",
+        "Dogfight",
+        "Tournament",
+        "Tournament",
+        "Battle",
+        "Battle",
+        "Mission",
+        "Mission",
+        "Social",
+        "Huttball",
+        "Foot Race",
+        "Planetary Race",
+        "Space Race",
+        "Raid Boss",
+        "Jailbreak",
+        "Heist",
+        "Fucking Run",
+        "Module"
       ]
       let matchLocation = [
-        'Stoval Outpost',
-        'Abandoned Warehouse',
-        'Desert Ruins',
-        'Star Destroyer',
-        'Mos Espa Cantina',
-        'Geonosis Arena',
-        'Cliffside Landing Platform',
-        'Ilum Wastes',
-        'Subway Control Station',
-        'Mining Colony 72',
-        'Mos Shuuta',
-        'Tatooine Spaceport',
-        'The Retreat',
-        'Forest Moon Landing',
-        'The Base',
-        'Valley of the Dark Lords'
+        "Stoval Outpost",
+        "Abandoned Warehouse",
+        "Desert Ruins",
+        "Star Destroyer",
+        "Mos Espa Cantina",
+        "Geonosis Arena",
+        "Cliffside Landing Platform",
+        "Ilum Wastes",
+        "Subway Control Station",
+        "Mining Colony 72",
+        "Mos Shuuta",
+        "Tatooine Spaceport",
+        "The Retreat",
+        "Forest Moon Landing",
+        "The Base",
+        "Valley of the Dark Lords",
+        "Zeffo Landing Pad",
+        "Badlands Outpost",
+        "Ilum Cliffs",
+        "Subway Platform"
       ]
       let matchEnemy = [
-        'Galactic Empire',
-        'Galactic Empire',
-        'Galactic Empire',
-        'Separatists',
-        'Separatists',
-        'Separatists',
-        'Rebel Alliance',
-        'Rebel Alliance',
-        'Rebel Alliance',
-        'Galactic Republic',
-        'Galactic Republic',
-        'Galactic Republic',
-        'Jedi Order',
-        'Jedi Order',
-        'Sith Order',
-        'Sith Order',
-        'Old Republic',
-        'Old Republic',
-        'Sith Empire',
-        'Sith Empire',
-        'First Order',
-        'The Resistance',
-        'Scum and Villainy',
-        'Scum and Villainy',
-        'Scum and Villainy',
-        'Creatures',
-        'Creatures',
-        'Creatures',
-        'Large Creatures',
-        'Large Creatures',
-        'Zillo Beast',
-        'Pirates',
-        'Pirates',
-        'Black Sun',
-        'Black Sun',
-        'Hatchet Men',
-        'Bloodstalkers',
-        'Nar Shadows',
-        'Bounty Hunters',
-        'Corusca Syndicate',
-        'JasQuai Pirates',
-        'Yiyar Clan',
-        'Chrome Bones PMC',
-        'Death Watch',
-        'Nightsisters',
-        'Zeison Sha',
-        'Jensaarai',
-        'Imperial Knights',
-        'ISDT Corp',
-        'Stormhawks',
-        'Blue Milk Boys',
-        'Zillo the Crafter',
-        'Will Nunes Randoms',
-        'Iconic Characters'
+        "Galactic Empire",
+        "Galactic Empire",
+        "Galactic Empire",
+        "Imperial Army",
+        "Imperial Intelligence",
+        "Inquisitorius",
+        "Imperial Remnant",
+        "Imperial Remnant (Thrawn/Gideon)",
+        "Imperial Remnant (Desann)",
+        "Imperial Knights",
+        "Separatists",
+        "Separatists",
+        "Separatists",
+        "Rebel Alliance",
+        "Rebel Alliance",
+        "Rebel Alliance",
+        "Galactic Republic",
+        "Galactic Republic",
+        "Galactic Republic",
+        "Jedi Order",
+        "Jedi Order",
+        "Jedi Praxeum",
+        "Sith Order",
+        "Sith Order",
+        "Disciples of Ragnos",
+        "The Seven",
+        "Old Republic",
+        "Old Republic",
+        "Sith Empire",
+        "Sith Empire",
+        "First Order",
+        "The Resistance",
+        "Scum and Villainy",
+        "Scum and Villainy",
+        "Scum and Villainy",
+        "Slavers",
+        "Yiyar Clan",
+        "Hatchet Men",
+        "Bloodstalkers",
+        "Nar Shadows",
+        "Crimson Dawn",
+        "Pyke Syndicate",
+        "Corusca Syndicate",
+        "Law Enforcement",
+        "Law Enforcement",
+        "Law Enforcement",
+        "CorSec",
+        "ADVENT",
+        "Creatures",
+        "Creatures",
+        "Creatures",
+        "Large Creatures",
+        "Large Creatures",
+        "Zillo Beast",
+        "Pirates",
+        "Pirates",
+        "Pirates",
+        "JasQuai Pirates",
+        "Ohnaka Pirates",
+        "Black Sun",
+        "Zann Consortium",
+        "Mercenaries",
+        "Mercenaries",
+        "Mercenaries",
+        "Bounty Hunters",
+        "Chrome Bones PMC",
+        "Mandalorian Loyalists",
+        "Death Watch",
+        "Force Users",
+        "Spectre Cell",
+        "Adamite Paladins",
+        "Skyholme Astromancers",
+        "Nightsisters",
+        "Zeison Sha",
+        "Jensaarai",
+        "Sathari Militants",
+        "Zillo the Crafter",
+        "Will Nunes Randoms",
+        "Iconic Characters",
+        "ISDT Corp",
+        "Stormhawks",
+        "Blue Milk Boys",
+        "Starseekers"
       ]
       let matchRules = [
-        'None',
-        'None',
-        'None',
-        'None',
-        'None',
-        'None',
-        'None',
-        'None',
-        'None',
-        'None',
-        'Side Objective',
-        'Side Objective',
-        'Side Objective',
-        'Use Two Special Rules',
-        'Use Two Special Rules',
-        'Use Two Equipment Rules',
-        'Use Two Equipment Rules',
-        'Climactic Destiny',
-        'Climactic Destiny',
-        'Mild Darkness',
-        'Mild Darkness',
-        'Deep Darkness',
-        'Blinding Light',
-        'Light Drizzle',
-        'Light Drizzle',
-        'Downpour',
-        'Thunder and Lightning',
-        'Sandstorm',
-        'Frigid Cold',
-        'Blistering Heat',
-        'Close Combat',
-        'Stealth Insertion',
-        'Ambushed',
-        'Allied Forces',
-        'Iconic Opponent',
-        'Fisticuffs',
-        'Light and Agile',
-        'Heavy and Durable',
-        'Light Vergence',
-        'Dark Vergence',
-        'Fucking Portals'
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "Side Objective",
+        "Side Objective",
+        "Side Objective",
+        "Use Two Special Rules",
+        "Use Two Special Rules",
+        "Use Two Equipment Rules",
+        "Use Two Equipment Rules",
+        "Climactic Destiny",
+        "Climactic Destiny",
+        "Mild Darkness",
+        "Mild Darkness",
+        "Deep Darkness",
+        "Blinding Light",
+        "Light Drizzle",
+        "Light Drizzle",
+        "Downpour",
+        "Thunder and Lightning",
+        "Sandstorm",
+        "Frigid Cold",
+        "Blistering Heat",
+        "Close Combat",
+        "Stealth Insertion",
+        "Ambushed",
+        "Allied Forces",
+        "Iconic Opponent",
+        "Fisticuffs",
+        "Light and Agile",
+        "Heavy and Durable",
+        "Light Vergence",
+        "Dark Vergence",
+        "Fucking Portals"
       ]
       let matchGear = [
-        'Bring Your Own',
-        'Bring Your Own',
-        'Bring Your Own',
-        'Diminishing Choices',
-        'Diminishing Choices',
-        'Diminishing Choices',
-        'On-Site Procurement',
-        'Budgeted',
-        'Budgeted',
-        'Deployable Cover',
-        'Deployable Cover',
-        'One of Each',
-        'One of Each',
-        'Take It Home',
-        'Self-Crafted',
-        'Duelists Arms',
-        'Emplacements',
-        'Stashes'
+        "Bring Your Own",
+        "Bring Your Own",
+        "Bring Your Own",
+        "Bring Your Own",
+        "Bring Your Own",
+        "Bring Your Own",
+        "Diminishing Choices",
+        "Diminishing Choices",
+        "Diminishing Choices",
+        "Budgeted",
+        "Budgeted",
+        "Deployable Cover",
+        "Deployable Cover",
+        "One of Each",
+        "One of Each",
+        "Take It Home",
+        "Self-Crafted",
+        "Duelist's Arms",
+        "Emplacements",
+        "Stashes",
+        "On-Site Procurement",
       ]
       let matchDifficulty = [
-        'Very Easy',
-        'Very Easy',
-        'Easy',
-        'Easy',
-        'Easy',
-        'Moderate',
-        'Moderate',
-        'Moderate',
-        'Moderate',
-        'Hard',
-        'Hard',
-        'Hard',
-        'Very Hard',
-        'Very Hard',
-        'Legendary'
+        "Very Easy",
+        "Very Easy",
+        "Easy",
+        "Easy",
+        "Easy",
+        "Moderate",
+        "Moderate",
+        "Moderate",
+        "Moderate",
+        "Hard",
+        "Hard",
+        "Hard",
+        "Very Hard",
+        "Very Hard",
+        "Legendary"
       ]
-
-    function christmas() {
-      console.log("Merry Santa Day!");
-    }
 
   const typeGenerator = () => {
     console.log("entering the typeGenerator function...");
@@ -210,7 +247,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     // Compare our MatchType result to the MatchType state
     console.log("is this a duplicate?");
     if(randomType === matchTypeState) {
-    // If it's a duplicate roll, reroll.
+    // If it"s a duplicate roll, reroll.
     console.log("Duplicate detected! Rerolling...");
       typeGenerator();
     } else {
@@ -228,7 +265,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
     // Compare our MatchType result to the MatchType state
     if(randomLocation === matchLocationState) {
-    // If it's a duplicate roll, reroll.
+    // If it"s a duplicate roll, reroll.
       locationGenerator();
     } else {
     // Store this roll into the MatchType state.
@@ -239,7 +276,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   // function locationGenerator() {
   //   var randomLocation = Math.floor(Math.random() * (matchLocation.length));
   //   console.log(matchLocation[randomLocation])
-  //   document.getElementById('match-location-result').innerHTML = matchLocation[randomLocation];
+  //   document.getElementById("match-location-result").innerHTML = matchLocation[randomLocation];
   // }
 
   function enemyGenerator() {
@@ -247,7 +284,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     console.log(matchEnemy[randomEnemy])
 
 
-    document.getElementById('enemy-type-result').innerHTML = matchEnemy[randomEnemy];
+    document.getElementById("enemy-type-result").innerHTML = matchEnemy[randomEnemy];
 
 
 
@@ -256,7 +293,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   function equipmentGenerator() {
     var randomEquipment = Math.floor(Math.random() * (matchGear.length));
     console.log(matchGear[randomEquipment])
-    document.getElementById('match-equipment-result').innerHTML = matchGear[randomEquipment];
+    document.getElementById("match-equipment-result").innerHTML = matchGear[randomEquipment];
     
   }
 
@@ -268,9 +305,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     console.log(matchRules[randomRules1])
     console.log(matchRules[randomRules2])
 
-    document.getElementById('rules-result1').innerHTML = matchRules[randomRules1];
-    document.getElementById('rules-between').innerHTML = "OR ";
-    document.getElementById('rules-result2').innerHTML = matchRules[randomRules2];
+    document.getElementById("rules-result1").innerHTML = matchRules[randomRules1];
+    document.getElementById("rules-between").innerHTML = "OR ";
+    $("rules-result2").innerHTML = matchRules[randomRules2];
 
   }
 
@@ -279,9 +316,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     
     console.log(matchDifficulty[randomDifficulty])
 
-    document.getElementById('difficulty-result').innerHTML = matchDifficulty[randomDifficulty];
+    document.getElementById("difficulty-result").innerHTML = matchDifficulty[randomDifficulty];
   }
-
 
 
 
@@ -292,7 +328,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     <div className="App">
       <h1>Combat Trials Encounter Randomizer!</h1>
       <p>Click the button to obtain a random result from the table in the Combat Trials document. This list is only updated by hand, so far.</p>
-      <p>Last Update: 10/26/20</p>
+      <p>Last Update: 2/12/21</p>
       <div id="main-area">
       <div id="button-area">
         <div className="button-group">
@@ -303,7 +339,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
           onClick={() => typeGenerator()}>
             Match Type
           </Button>
-    
+          {/* Need 5 RESULTS */}
           <div className="result" id="match-type-result">{matchTypeState}</div>
         </div>
 
@@ -315,6 +351,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
           onClick={() => locationGenerator()}>
             Match Location
           </Button>
+          {/* Need 3 RESULTS */}
           <div className="result" id="match-location-result">{matchLocationState}</div>
         </div>
 
@@ -326,6 +363,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
           onClick={() => enemyGenerator()}>
             Enemy Type
           </Button>
+          {/* Need 5 RESULTS */}
           <div className="result" id="enemy-type-result"></div>
         </div>
 
@@ -338,7 +376,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
           onClick={() => equipmentGenerator()}>
             Equipment Rules
           </Button>
-
+          {/* Need 3 RESULTS */}
           <div className="result" id="match-equipment-result"></div>
         </div>
 
@@ -351,7 +389,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
           onClick={() => rulesGenerator()}>
             Special Rules
           </Button>
-
+          {/* Need 4 RESULTS */}
           <div className="result" id="rules-result1"></div>
           <div className="result" id="rules-between"></div>
           <div className="result" id="rules-result2"></div>
@@ -365,7 +403,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
           onClick={() => difficultyGenerator()}>
             Difficulty
           </Button>
-
+          {/* Need 5 RESULTS */}
           <div className="result" id="difficulty-result"></div>
         </div>
 

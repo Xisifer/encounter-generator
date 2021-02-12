@@ -58,7 +58,7 @@ body {
   height:600px;
   right:20%;
   position: absolute;
-  /* border: 5px solid pink; */
+  border: 5px solid pink;
   display: none;
 }
 .discord-text {
@@ -94,6 +94,7 @@ body {
   font-size:2rem;
   margin-left:1rem;
   margin-top:1rem;
+  border: 5px solid pink;
 }
 
 .btn {
