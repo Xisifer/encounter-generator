@@ -49,8 +49,17 @@ body {
   background-color:rgb(54,57,53) !important;
   color:white !important;
 }
-.result {
-  display:inline;
+.result-box {
+  display: flex;
+  position: relative;
+  left: 40%;
+  right: 40%;
+  padding:15px;
+}
+.list-group-item {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  width: 200px;
 }
 
 #results {
@@ -70,10 +79,9 @@ body {
   display: none !important;
 }
 
-#button-area {
-  width:45%;
-  height:300px;
-  left:15%;
+.generator-area {
+  width:100%;
+  height:50%;
   position: absolute;
   display:contents;
   /* border: 5px solid green; */
@@ -83,7 +91,7 @@ body {
   /* background-color:green; */
   height:600px;
   width:50%;
-  left:30%;
+  left:25%;
   position:relative;
 }
 
@@ -94,11 +102,26 @@ body {
   font-size:2rem;
   margin-left:1rem;
   margin-top:1rem;
-  border: 5px solid pink;
+  /* border: 5px solid pink; */
+  /* background-color: dimgray; */
 }
 
 .btn {
-  display:grid !important;
+  display:grid;
+  height:max-content;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: .25rem;
+}
+
+.list-group-item {
+  color:black;
+  background-color: dimgray;
 }
 
 

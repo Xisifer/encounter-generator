@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import {Button} from "react-bootstrap";
+import {Button, ListGroup} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -127,7 +127,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
         "Pirates",
         "Pirates",
         "Pirates",
-        "JasQuai Pirates",
+        "Jas'Quai Pirates",
         "Ohnaka Pirates",
         "Black Sun",
         "Zann Consortium",
@@ -146,7 +146,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
         "Zeison Sha",
         "Jensaarai",
         "Sathari Militants",
-        "Zillo the Crafter",
+        "Zillo' the Crafter",
         "Will Nunes Randoms",
         "Iconic Characters",
         "ISDT Corp",
@@ -259,64 +259,93 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
   const locationGenerator = () => {
+    // Need 3 RESULTS
 
     // Roll on the MatchType table to get a result.
-    let randomLocation = matchLocation[Math.floor(Math.random() * (matchLocation.length))];
+    let randomLocation1 = matchLocation[Math.floor(Math.random() * (matchLocation.length))];
+    let randomLocation2 = matchLocation[Math.floor(Math.random() * (matchLocation.length))];
+    let randomLocation3 = matchLocation[Math.floor(Math.random() * (matchLocation.length))];
 
-    // Compare our MatchType result to the MatchType state
-    if(randomLocation === matchLocationState) {
-    // If it"s a duplicate roll, reroll.
+    if(randomLocation1 === matchLocationState) {     // Compare our MatchType result to the MatchType state
+      locationGenerator();     // If it"s a duplicate roll, reroll.
+    } else {
+    setMatchLocationState(randomLocation1);     // Store this roll into the MatchType state.
+    }
+
+    if(randomLocation2 === matchLocationState) { 
+      locationGenerator(); 
+    } else {
+    setMatchLocationState(randomLocation2);   
+    }
+    if(randomLocation3 === matchLocationState) {
       locationGenerator();
     } else {
-    // Store this roll into the MatchType state.
-    setMatchLocationState(randomLocation);
+    setMatchLocationState(randomLocation3); 
     }
   }
 
-  // function locationGenerator() {
-  //   var randomLocation = Math.floor(Math.random() * (matchLocation.length));
-  //   console.log(matchLocation[randomLocation])
-  //   document.getElementById("match-location-result").innerHTML = matchLocation[randomLocation];
-  // }
 
   function enemyGenerator() {
-    var randomEnemy = Math.floor(Math.random() * (matchEnemy.length));
-    console.log(matchEnemy[randomEnemy])
+    // Need 5 RESULTS
+    var randomEnemy1 = Math.floor(Math.random() * (matchEnemy.length));
+    var randomEnemy2 = Math.floor(Math.random() * (matchEnemy.length));
+    var randomEnemy3 = Math.floor(Math.random() * (matchEnemy.length));
+    var randomEnemy4 = Math.floor(Math.random() * (matchEnemy.length));
+    var randomEnemy5 = Math.floor(Math.random() * (matchEnemy.length));
+    // console.log(matchEnemy[randomEnemy])
 
-
-    document.getElementById("enemy-type-result").innerHTML = matchEnemy[randomEnemy];
+    document.getElementById("enemy-type-result1").innerHTML = matchEnemy[randomEnemy1];
+    document.getElementById("enemy-type-result2").innerHTML = matchEnemy[randomEnemy2];
+    document.getElementById("enemy-type-result3").innerHTML = matchEnemy[randomEnemy3];
+    document.getElementById("enemy-type-result4").innerHTML = matchEnemy[randomEnemy4];
+    document.getElementById("enemy-type-result5").innerHTML = matchEnemy[randomEnemy5];
 
 
 
   }
 
   function equipmentGenerator() {
-    var randomEquipment = Math.floor(Math.random() * (matchGear.length));
-    console.log(matchGear[randomEquipment])
-    document.getElementById("match-equipment-result").innerHTML = matchGear[randomEquipment];
+    // Need 3 RESULTS
+    var randomEquipment1 = Math.floor(Math.random() * (matchGear.length));
+    var randomEquipment2 = Math.floor(Math.random() * (matchGear.length));
+    var randomEquipment3 = Math.floor(Math.random() * (matchGear.length));
+    // console.log(matchGear[randomEquipment])
+    document.getElementById("match-equipment-result1").innerHTML = matchGear[randomEquipment1];
+    document.getElementById("match-equipment-result2").innerHTML = matchGear[randomEquipment2];
+    document.getElementById("match-equipment-result3").innerHTML = matchGear[randomEquipment3];
     
   }
 
   function rulesGenerator() {
+    // Need 4 RESULTS
 
     var randomRules1 = Math.floor(Math.random() * (matchRules.length));
     var randomRules2 = Math.floor(Math.random() * (matchRules.length));
-
-    console.log(matchRules[randomRules1])
-    console.log(matchRules[randomRules2])
+    var randomRules3 = Math.floor(Math.random() * (matchRules.length));
+    var randomRules4 = Math.floor(Math.random() * (matchRules.length));
 
     document.getElementById("rules-result1").innerHTML = matchRules[randomRules1];
-    document.getElementById("rules-between").innerHTML = "OR ";
     document.getElementById("rules-result2").innerHTML = matchRules[randomRules2];
+    document.getElementById("rules-result3").innerHTML = matchRules[randomRules3];
+    document.getElementById("rules-result4").innerHTML = matchRules[randomRules4];
 
   }
 
   function difficultyGenerator() {
-    var randomDifficulty = Math.floor(Math.random() * (matchDifficulty.length));
+    // Need 5 RESULTS
+    var randomDifficulty1 = Math.floor(Math.random() * (matchDifficulty.length));
+    var randomDifficulty2 = Math.floor(Math.random() * (matchDifficulty.length));
+    var randomDifficulty3 = Math.floor(Math.random() * (matchDifficulty.length));
+    var randomDifficulty4 = Math.floor(Math.random() * (matchDifficulty.length));
+    var randomDifficulty5 = Math.floor(Math.random() * (matchDifficulty.length));
     
-    console.log(matchDifficulty[randomDifficulty])
+    console.log(matchDifficulty[randomDifficulty1])
 
-    document.getElementById("difficulty-result").innerHTML = matchDifficulty[randomDifficulty];
+    document.getElementById("difficulty-result1").innerHTML = matchDifficulty[randomDifficulty1];
+    document.getElementById("difficulty-result2").innerHTML = matchDifficulty[randomDifficulty2];
+    document.getElementById("difficulty-result3").innerHTML = matchDifficulty[randomDifficulty3];
+    document.getElementById("difficulty-result4").innerHTML = matchDifficulty[randomDifficulty4];
+    document.getElementById("difficulty-result5").innerHTML = matchDifficulty[randomDifficulty5];
   }
 
 
@@ -330,7 +359,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
       <p>Click the button to obtain a random result from the table in the Combat Trials document. This list is only updated by hand, so far.</p>
       <p>Last Update: 2/12/21</p>
       <div id="main-area">
-      <div id="button-area">
+      <div class="generator-area">
         <div className="button-group">
           <Button 
           variant="secondary" 
@@ -339,11 +368,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
           onClick={() => typeGenerator()}>
             Match Type
           </Button>
-          {/* Need 5 RESULTS */}
-          <div className="result" id="match-type-result">{matchTypeState}</div>
+          <div className="result" id="match-type-result1">{matchTypeState}</div>
+          <div className="result" id="match-type-result2">{matchTypeState}</div>
+          <div className="result" id="match-type-result3">{matchTypeState}</div>
+          <div className="result" id="match-type-result4">{matchTypeState}</div>
+          <div className="result" id="match-type-result5">{matchTypeState}</div>
         </div>
 
-        <div id="button-area">
+        <div class="generator-area">
           <Button 
           variant="secondary" 
           size="lg" 
@@ -351,11 +383,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
           onClick={() => locationGenerator()}>
             Match Location
           </Button>
-          {/* Need 3 RESULTS */}
-          <div className="result" id="match-location-result">{matchLocationState}</div>
+          <div class="result-box">
+            <ListGroup>
+              <ListGroup.Item id="match-location-result1">{matchLocationState}</ListGroup.Item>
+              <ListGroup.Item id="match-location-result2">{matchLocationState}</ListGroup.Item>
+              <ListGroup.Item id="match-location-result3">{matchLocationState}</ListGroup.Item>
+            </ListGroup>
+          </div>
+          {/* <div className="result" id="match-location-result1">{matchLocationState}</div> */}
+          {/* <div className="result" id="match-location-result2">{matchLocationState}</div>
+          <div className="result" id="match-location-result3">{matchLocationState}</div> */}
+          
         </div>
 
-        <div id="button-area">
+        <div class="generator-area">
           <Button 
           variant="secondary" 
           size="lg" 
@@ -363,12 +404,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
           onClick={() => enemyGenerator()}>
             Enemy Type
           </Button>
-          {/* Need 5 RESULTS */}
-          <div className="result" id="enemy-type-result"></div>
+          <div class="result-box">
+            <ListGroup>
+              <ListGroup.Item id="enemy-type-result1"></ListGroup.Item>
+              <ListGroup.Item id="enemy-type-result2"></ListGroup.Item>
+              <ListGroup.Item id="enemy-type-result3"></ListGroup.Item>
+              <ListGroup.Item id="enemy-type-result4"></ListGroup.Item>
+              <ListGroup.Item id="enemy-type-result5"></ListGroup.Item>
+            </ListGroup>
+          </div>
         </div>
 
 
-        <div id="button-area">
+        <div class="generator-area">
           <Button 
           variant="secondary" 
           size="lg" 
@@ -376,12 +424,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
           onClick={() => equipmentGenerator()}>
             Equipment Rules
           </Button>
-          {/* Need 3 RESULTS */}
-          <div className="result" id="match-equipment-result"></div>
+          <div class="result-box">
+            <ListGroup>
+              <ListGroup.Item id="match-equipment-result1"></ListGroup.Item>
+              <ListGroup.Item id="match-equipment-result2"></ListGroup.Item>
+              <ListGroup.Item id="match-equipment-result3"></ListGroup.Item>
+            </ListGroup>
+          </div>
         </div>
 
 
-        <div id="button-area">
+        <div class="generator-area">
           <Button 
           variant="secondary" 
           size="lg" 
@@ -389,13 +442,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
           onClick={() => rulesGenerator()}>
             Special Rules
           </Button>
-          {/* Need 4 RESULTS */}
-          <div className="result" id="rules-result1"></div>
-          <div className="result" id="rules-between"></div>
-          <div className="result" id="rules-result2"></div>
+          <div class="result-box">
+            <ListGroup>
+              <ListGroup.Item id="rules-result1"></ListGroup.Item>
+              <ListGroup.Item id="rules-result2"></ListGroup.Item>
+              <ListGroup.Item id="rules-result3"></ListGroup.Item>
+              <ListGroup.Item id="rules-result4"></ListGroup.Item>
+            </ListGroup>
+          </div>
 
         </div>
-        <div id="button-area">
+        <div class="generator-area">
           <Button 
           variant="secondary" 
           size="lg" 
@@ -403,8 +460,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
           onClick={() => difficultyGenerator()}>
             Difficulty
           </Button>
-          {/* Need 5 RESULTS */}
-          <div className="result" id="difficulty-result"></div>
+          <div class="result-box">
+            <ListGroup>
+              <ListGroup.Item id="difficulty-result1"></ListGroup.Item>
+              <ListGroup.Item id="difficulty-result2"></ListGroup.Item>
+              <ListGroup.Item id="difficulty-result3"></ListGroup.Item>
+              <ListGroup.Item id="difficulty-result4"></ListGroup.Item>
+              <ListGroup.Item id="difficulty-result5"></ListGroup.Item>
+            </ListGroup>
+          </div>
         </div>
 
 
