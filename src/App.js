@@ -859,31 +859,37 @@ function App() {
       text: "Very Easy",
       weight: 1,
       icon: "https://i.imgur.com/fwrGvNf.png",
+      description: "Recommended XP: 100-200",
     },
     {
       text: "Easy",
       weight: 2,
       icon: "https://i.imgur.com/fwrGvNf.png",
+      description: "Recommended XP: 200-250",
     },
     {
       text: "Moderate",
       weight: 40,
       icon: "https://i.imgur.com/fwrGvNf.png",
+      description: "Recommended XP: 250-300",
     },
     {
       text: "Hard",
       weight: 30,
       icon: "https://i.imgur.com/fwrGvNf.png",
+      description: "Recommended XP: 300-400",
     },
     {
       text: "Very Hard",
       weight: 2,
       icon: "https://i.imgur.com/fwrGvNf.png",
+      description: "Recommended XP: 400-500",
     },
     {
       text: "Legendary",
       weight: 1,
       icon: "https://i.imgur.com/fwrGvNf.png",
+      description: "Recommended XP: 600+",
     },
   ];
 

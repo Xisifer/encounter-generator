@@ -35,21 +35,29 @@ export const ResultBox = ({ data, setData }) => {
   return (
     <div className="result-box">
         <div className="list-group">
+
           {data.map((item) => (
             <div key={item.id}>
-                <p>Lock Choice</p>
-                <input type="checkbox" checked={item.locked} onChange={() => dataLockToggle(item.id)}/>
-                {item.locked && (<div>Is locked</div>)}
+            <div className="result-line">
+                <div className="lockbox">
+                    <div className="locktext">Lock Choice</div>
+                    <input type="checkbox" checked={item.locked} onChange={() => dataLockToggle(item.id)}/>
+                    {item.locked && (<div className="lock-confirm">Is locked</div>)}
+                </div>
                 <div
-                    className="list-group-item"
+                    className="result-item"
                     action
-                >
-                <img src={item.icon} alt="" />
-                {item.text}
+                    >
+                {/* <img src={item.icon} alt="" /> */}
+                    {item.text}
+                </div>
+                <div className="description-box">
+                    {item.description}
                 </div>
             </div>
-          ))}
           </div>
+          ))}
+        </div>
     </div>
   );
 };
