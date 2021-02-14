@@ -13,22 +13,22 @@ const DIFFICULTY_COUNT = 5;
 
 function App() {
   const [matchTypeState, setMatchTypeState] = React.useState(
-    Array(MATCH_TYPE_COUNT).fill()
+    Array(MATCH_TYPE_COUNT).fill({})
   );
   const [matchLocationState, setMatchLocationState] = React.useState(
-    Array(LOCATION_COUNT).fill()
+    Array(LOCATION_COUNT).fill({})
   );
   const [matchEnemyState, setMatchEnemyState] = React.useState(
-    Array(ENEMY_TYPE_COUNT).fill()
+    Array(ENEMY_TYPE_COUNT).fill({})
   );
   const [matchRulesState, setMatchRulesState] = React.useState(
-    Array(RULES_COUNT).fill()
+    Array(RULES_COUNT).fill({})
   );
   const [matchGearState, setMatchGearState] = React.useState(
-    Array(EQUIPMENT_COUNT).fill()
+    Array(EQUIPMENT_COUNT).fill({})
   );
   const [matchDifficultyState, setMatchDifficultyState] = React.useState(
-    Array(DIFFICULTY_COUNT).fill()
+    Array(DIFFICULTY_COUNT).fill({})
   );
 
   let matchType = [
@@ -36,115 +36,115 @@ function App() {
       text: "Skirmish",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Duel",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Horde",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Hunt",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Capture",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Dogfight",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Tournament",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Battle",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Mission",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Social",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Huttball",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Foot Race",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Planetary Race",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Space Race",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Raid Boss",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Jailbreak",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Heist",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Fucking Run",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
     {
       text: "Module",
       weight: 1,
       icon: "",
-      description: ""
+      description: "",
     },
   ];
   let matchLocation = [
@@ -270,35 +270,35 @@ function App() {
     },
   ];
   let matchEnemy = [
-    { 
-      text: "Galactic Empire", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Galactic Empire",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Imperial Army", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Imperial Army",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Imperial Intelligence", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Imperial Intelligence",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Inquisitorius", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Inquisitorius",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Imperial Remnant", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Imperial Remnant",
+      weight: 1,
+      icon: "",
+      description: "",
     },
     {
       text: "Imperial Remnant (Thrawn/Gideon)",
@@ -306,469 +306,469 @@ function App() {
       icon: "",
       description: "",
     },
-    { 
-      text: "Imperial Remnant (Desann)", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Imperial Remnant (Desann)",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Imperial Knights", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Imperial Knights",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Separatists", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Separatists",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Rebel Alliance", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Rebel Alliance",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Galactic Republic", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Galactic Republic",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Jedi Order", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Jedi Order",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Jedi Praxeum", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Jedi Praxeum",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Sith Order", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Sith Order",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Disciples of Ragnos", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Disciples of Ragnos",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "The Seven", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "The Seven",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Old Republic", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Old Republic",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Sith Empire", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Sith Empire",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "First Order", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "First Order",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "The Resistance", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "The Resistance",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Scum and Villainy", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Scum and Villainy",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Slavers", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Slavers",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Yiyar Clan", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Yiyar Clan",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Hatchet Men", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Hatchet Men",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Bloodstalkers", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Bloodstalkers",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Nar Shadows", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Nar Shadows",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Crimson Dawn", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Crimson Dawn",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Pyke Syndicate", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Pyke Syndicate",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Corusca Syndicate", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Corusca Syndicate",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Law Enforcement", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Law Enforcement",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "CorSec", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "CorSec",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "ADVENT", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "ADVENT",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Creatures", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Creatures",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Large Creatures", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Large Creatures",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Zillo Beast", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Zillo Beast",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Pirates", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Pirates",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Jas'Quai Pirates", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Jas'Quai Pirates",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Ohnaka Pirates", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Ohnaka Pirates",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Black Sun", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Black Sun",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Zann Consortium", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Zann Consortium",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Mercenaries", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Mercenaries",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Bounty Hunters", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Bounty Hunters",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Chrome Bones PMC", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Chrome Bones PMC",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Mandalorian Loyalists", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Mandalorian Loyalists",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Death Watch", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Death Watch",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Force Users", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Force Users",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Spectre Cell", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Spectre Cell",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Adamite Paladins", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Adamite Paladins",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Skyholme Astromancers", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Skyholme Astromancers",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Nightsisters", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Nightsisters",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Zeison Sha", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Zeison Sha",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Jensaarai", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Jensaarai",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Sathari Militants", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Sathari Militants",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Zillo' the Crafter", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Zillo' the Crafter",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Will Nunes Randoms", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Will Nunes Randoms",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Iconic Characters", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Iconic Characters",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "ISDT Corp", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "ISDT Corp",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Stormhawks", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Stormhawks",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Blue Milk Boys", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Blue Milk Boys",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Starseekers", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Starseekers",
+      weight: 1,
+      icon: "",
+      description: "",
     },
   ];
   let matchRules = [
-    { 
-      text: "None", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "None",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Side Objective", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Side Objective",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Use Two Special Rules", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Use Two Special Rules",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Use Two Equipment Rules", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Use Two Equipment Rules",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Climactic Destiny", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Climactic Destiny",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Mild Darkness", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Mild Darkness",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Deep Darkness", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Deep Darkness",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Blinding Light", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Blinding Light",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Light Drizzle", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Light Drizzle",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Downpour", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Downpour",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Thunder and Lightning", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Thunder and Lightning",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Sandstorm", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Sandstorm",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Frigid Cold", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Frigid Cold",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Blistering Heat", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Blistering Heat",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Close Combat", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Close Combat",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Stealth Insertion", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Stealth Insertion",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Ambushed", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Ambushed",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Allied Forces", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Allied Forces",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Iconic Opponent", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Iconic Opponent",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Fisticuffs", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Fisticuffs",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Light and Agile", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Light and Agile",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Heavy and Durable", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Heavy and Durable",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Light Vergence", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Light Vergence",
+      weight: 1,
+      icon: "",
+      description: "",
     },
     {
       text: "Dark Vergence",
@@ -784,16 +784,18 @@ function App() {
     },
   ];
   let matchGear = [
-    { 
-      text: "Bring Your Own", 
-      weight: 1, 
-      icon: "", 
-      description: "" },
-    { 
-      text: "Diminishing Choices", 
-      weight: 1, 
-      icon: "", 
-      description: "" },
+    {
+      text: "Bring Your Own",
+      weight: 1,
+      icon: "",
+      description: "",
+    },
+    {
+      text: "Diminishing Choices",
+      weight: 1,
+      icon: "",
+      description: "",
+    },
     {
       text: "Budgeted",
       weight: 1,
@@ -801,53 +803,54 @@ function App() {
       description:
         ":moneybag: Budgeted (Receive a budget of credits each for Weapons, Armor, and Items)",
     },
-    { 
-      text: "Deployable Cover", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Deployable Cover",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "One of Each", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "One of Each",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Take It Home", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Take It Home",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Self-Crafted", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Self-Crafted",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Duelist's Arms", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Duelist's Arms",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Emplacements", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Emplacements",
+      weight: 1,
+      icon: "",
+      description: "",
     },
-    { 
-      text: "Stashes", 
-      weight: 1, 
-      icon: "", 
-      description: "" 
+    {
+      text: "Stashes",
+      weight: 1,
+      icon: "",
+      description: "",
     },
     {
       text: "On-Site Procurement",
       weight: 1,
       icon: "",
-      description: ":Handgun: On-Site Procurement (Start with no gear, find gear littered around match area, Great Rewards)",
+      description:
+        ":Handgun: On-Site Procurement (Start with no gear, find gear littered around match area, Great Rewards)",
     },
   ];
   let matchDifficulty = [
@@ -883,7 +886,7 @@ function App() {
     },
   ];
 
-  const dataRoller = (allowDuplicates, data, setDataState, count) => {
+  const dataRoller = ({ data, setDataState, count, allowDuplicates }) => {
     let dataCopy = [...data];
     let newData = [];
 
@@ -892,18 +895,15 @@ function App() {
         newData.push(data[i]);
       }
     }
-
-    
-
-      for (let i = 0; i < count; i++) {
-        const index = Math.floor(Math.random() * dataCopy.length);
-        let selectedData = dataCopy[index];
-        if (allowDuplicates === false) {
-          dataCopy = dataCopy.filter((d) => selectedData.text !== d.text);
-        }
-        newData.push(selectedData.text, selectedData.icon, selectedData.description);
-        // newData.push(selectedData.icon);
-        // newData.push(selectedData.description);
+    for (let i = 0; i < count; i++) {
+      const index = Math.floor(Math.random() * dataCopy.length);
+      let selectedData = dataCopy[index];
+      if (allowDuplicates === false) {
+        dataCopy = dataCopy.filter((d) => selectedData.text !== d.text);
+      }
+      newData.push(selectedData);
+      // newData.push(selectedData.icon);
+      // newData.push(selectedData.description);
       setDataState(newData);
     }
   };
@@ -924,7 +924,12 @@ function App() {
               size="lg"
               id="match-type-button"
               onClick={() =>
-                dataRoller(true, matchType, setMatchTypeState, ENEMY_TYPE_COUNT)
+                dataRoller({
+                  allowDuplicates: true,
+                  data: matchType,
+                  setDataState: setMatchTypeState,
+                  count: ENEMY_TYPE_COUNT,
+                })
               }
             >
               Match Type
@@ -938,7 +943,12 @@ function App() {
               size="lg"
               id="match-location-button"
               onClick={() =>
-                dataRoller(false, matchLocation, setMatchLocationState, LOCATION_COUNT)
+                dataRoller({
+                  allowDuplicates: false,
+                  data: matchLocation,
+                  setDataState: setMatchLocationState,
+                  count: LOCATION_COUNT,
+                })
               }
             >
               Match Location
@@ -952,7 +962,12 @@ function App() {
               size="lg"
               id="enemy-type-button"
               onClick={() =>
-                dataRoller(false, matchEnemy, setMatchEnemyState, ENEMY_TYPE_COUNT)
+                dataRoller({
+                  allowDuplicates: false,
+                  data: matchEnemy,
+                  setDataState: setMatchEnemyState,
+                  count: ENEMY_TYPE_COUNT,
+                })
               }
             >
               Enemy Type
@@ -966,7 +981,12 @@ function App() {
               size="lg"
               id="match-equipment-button"
               onClick={() =>
-                dataRoller(false, matchGear, setMatchGearState, EQUIPMENT_COUNT)
+                dataRoller({
+                  allowDuplicates: false,
+                  data: matchGear,
+                  setDataState: setMatchGearState,
+                  count: EQUIPMENT_COUNT,
+                })
               }
             >
               Equipment Rules
@@ -980,7 +1000,12 @@ function App() {
               size="lg"
               id="rules-button"
               onClick={() =>
-                dataRoller(false, matchRules, setMatchRulesState, RULES_COUNT)
+                dataRoller({
+                  allowDuplicates: false,
+                  data: matchRules,
+                  setDataState: setMatchRulesState,
+                  count: RULES_COUNT,
+                })
               }
             >
               Special Rules
@@ -994,7 +1019,12 @@ function App() {
               size="lg"
               id="rules-button"
               onClick={() =>
-                dataRoller(true, matchDifficulty, setMatchDifficultyState, DIFFICULTY_COUNT)
+                dataRoller({
+                  allowDuplicates: true,
+                  data: matchDifficulty,
+                  setDataState: setMatchDifficultyState,
+                  count: DIFFICULTY_COUNT,
+                })
               }
             >
               Difficulty
