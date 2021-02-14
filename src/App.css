@@ -55,6 +55,8 @@ body {
   left: 40%;
   right: 40%;
   padding:15px;
+  width:50%;
+
 }
 .list-group-item {
   border-top-left-radius: inherit;
@@ -120,8 +122,15 @@ body {
 }
 
 .list-group-item {
-  color:white;
-  background-color: dimgray;
+  color:white !important;
+  border:5px red !important;
+  background-color: dimgray !important;
+  height:50px;
+  margin: 10px 0;
+}
+
+.list-group {
+  width:100%;
 }
 
 
