@@ -52,17 +52,23 @@ body {
 .result-box {
   display: flex;
   position: relative;
-  left: 40%;
-  right: 40%;
   padding:15px;
-  width:50%;
-
+  width:35%;
+  margin: 0 auto;
+  
 }
 .list-group-item {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
-  width: 200px;
+  height: auto;
+  min-height: 50px;
+  color:white !important;
+  border:5px red !important;
+  background-color: dimgray !important;
+  margin: 10px 0;
 }
+
+
 
 #results {
   width:40%;
@@ -121,13 +127,6 @@ body {
   border-radius: .25rem;
 }
 
-.list-group-item {
-  color:white !important;
-  border:5px red !important;
-  background-color: dimgray !important;
-  height:50px;
-  margin: 10px 0;
-}
 
 .list-group {
   width:100%;

@@ -5,14 +5,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {ResultBox} from "./resultBox";
 
 
+const LOCATION_COUNT = 3;
+const MATCH_TYPE_COUNT = 5;
+const ENEMY_TYPE_COUNT = 5;
+const EQUIPMENT_COUNT = 3;
+const RULES_COUNT = 4;
+const DIFFICULTY_COUNT = 5;
+
+
   function App() {
 
-  const [matchTypeState, setMatchTypeState]=React.useState([])
-  const [matchLocationState, setMatchLocationState]=React.useState([])
-  const [matchEnemyState, setMatchEnemyState]=React.useState([])
-  const [matchRulesState, setMatchRulesState]=React.useState([])
-  const [matchGearState, setMatchGearState]=React.useState([])
-  const [matchDifficultyState, setMatchDifficultyState]=React.useState([])
+  const [matchTypeState, setMatchTypeState]=React.useState(Array(MATCH_TYPE_COUNT).fill())
+  const [matchLocationState, setMatchLocationState]=React.useState(Array(LOCATION_COUNT).fill())
+  const [matchEnemyState, setMatchEnemyState]=React.useState(Array(ENEMY_TYPE_COUNT).fill())
+  const [matchRulesState, setMatchRulesState]=React.useState(Array(RULES_COUNT).fill())
+  const [matchGearState, setMatchGearState]=React.useState(Array(EQUIPMENT_COUNT).fill())
+  const [matchDifficultyState, setMatchDifficultyState]=React.useState(Array(DIFFICULTY_COUNT).fill())
 
 
 
@@ -256,18 +264,22 @@ import {ResultBox} from "./resultBox";
     // I DO mind in Location, Enemy Type, Equipment Rules, and Special Rules
 
     let dataCopy = [...data]; 
-    
 
-    const index1 = Math.floor(Math.random() * (dataCopy.length))
-    let randomData1 = dataCopy.splice(index1,1)
+    let newData = [];
 
-    const index2 = Math.floor(Math.random() * (dataCopy.length))
-    let randomData2 = dataCopy.splice(index2,1)
+    for (let i=0; i < count; i++) {
+      const index = Math.floor(Math.random() * (dataCopy.length))
+        newData.push(dataCopy.splice(index,1))
+    }
+    setDataState(newData);
 
-    const index3 = Math.floor(Math.random() * (dataCopy.length))
-    let randomData3 = dataCopy.splice(index3,1)
 
-    setDataState([randomData1,randomData2,randomData3]);
+    // const index2 = Math.floor(Math.random() * (dataCopy.length))
+    // let randomData2 = dataCopy.splice(index2,1)
+
+    // const index3 = Math.floor(Math.random() * (dataCopy.length))
+    // let randomData3 = dataCopy.splice(index3,1)
+
 
 
 
@@ -290,7 +302,7 @@ import {ResultBox} from "./resultBox";
           variant="secondary" 
           size="lg" 
           id="match-type-button" 
-          onClick={() => dataRoller(matchType, setMatchTypeState)}>
+          onClick={() => dataRoller(matchType, setMatchTypeState, ENEMY_TYPE_COUNT)}>
             Match Type
           </Button>
           <ResultBox 
@@ -304,7 +316,7 @@ import {ResultBox} from "./resultBox";
           variant="secondary" 
           size="lg" 
           id="match-location-button"
-          onClick={() => dataRoller(matchLocation, setMatchLocationState)}>
+          onClick={() => dataRoller(matchLocation, setMatchLocationState, LOCATION_COUNT)}>
             Match Location
           </Button>
           <ResultBox 
@@ -318,7 +330,7 @@ import {ResultBox} from "./resultBox";
           variant="secondary" 
           size="lg" 
           id="enemy-type-button"
-          onClick={() => dataRoller(matchEnemy, setMatchEnemyState)}>
+          onClick={() => dataRoller(matchEnemy, setMatchEnemyState, ENEMY_TYPE_COUNT)}>
             Enemy Type
           </Button>
           <ResultBox 
@@ -333,7 +345,7 @@ import {ResultBox} from "./resultBox";
           variant="secondary" 
           size="lg" 
           id="match-equipment-button"
-          onClick={() => dataRoller(matchGear, setMatchGearState)}>
+          onClick={() => dataRoller(matchGear, setMatchGearState, EQUIPMENT_COUNT)}>
             Equipment Rules
           </Button>
           <ResultBox 
@@ -348,7 +360,7 @@ import {ResultBox} from "./resultBox";
           variant="secondary" 
           size="lg" 
           id="rules-button"
-          onClick={() => dataRoller(matchRules, setMatchRulesState)}>
+          onClick={() => dataRoller(matchRules, setMatchRulesState, RULES_COUNT)}>
             Special Rules
           </Button>
           <ResultBox 
@@ -362,7 +374,7 @@ import {ResultBox} from "./resultBox";
           variant="secondary" 
           size="lg" 
           id="rules-button"
-          onClick={() => dataRoller(matchDifficulty, setMatchDifficultyState)}>
+          onClick={() => dataRoller(matchDifficulty, setMatchDifficultyState, DIFFICULTY_COUNT)}>
             Difficulty
           </Button>
           <ResultBox 
