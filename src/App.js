@@ -866,12 +866,12 @@ function App() {
     },
     {
       text: "Moderate",
-      weight: 4,
+      weight: 40,
       icon: "",
     },
     {
       text: "Hard",
-      weight: 3,
+      weight: 30,
       icon: "",
     },
     {
@@ -890,9 +890,9 @@ function App() {
     let dataCopy = [...data];
     let newData = [];
 
-    for (let i; i < data.length; i++) {
-      for (let j; j < data.weight; j++) {
-        newData.push(data[i]);
+    for (let i=0; i < data.length; i++) {
+      for (let j=0; j < data[i].weight-1; j++) {
+        dataCopy.push(data[i]);
       }
     }
     for (let i = 0; i < count; i++) {
@@ -902,8 +902,6 @@ function App() {
         dataCopy = dataCopy.filter((d) => selectedData.text !== d.text);
       }
       newData.push(selectedData);
-      // newData.push(selectedData.icon);
-      // newData.push(selectedData.description);
       setDataState(newData);
     }
   };

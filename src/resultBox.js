@@ -29,7 +29,6 @@ export const ResultBox = ({ data, idPrefix }) => {
               key={index}
               action
               href="#showDesc"
-              id={`${idPrefix}-result${index}`}
             >
               <img src={item.icon} alt="" />
               {item.text}
