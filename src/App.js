@@ -3,6 +3,7 @@ import "./App.css";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ResultBox } from "./resultBox";
+import { v4 as uuid } from "uuid";
 
 const LOCATION_COUNT = 3;
 const MATCH_TYPE_COUNT = 5;
@@ -857,32 +858,32 @@ function App() {
     {
       text: "Very Easy",
       weight: 1,
-      icon: "",
+      icon: "https://i.imgur.com/fwrGvNf.png",
     },
     {
       text: "Easy",
       weight: 2,
-      icon: "",
+      icon: "https://i.imgur.com/fwrGvNf.png",
     },
     {
       text: "Moderate",
       weight: 40,
-      icon: "",
+      icon: "https://i.imgur.com/fwrGvNf.png",
     },
     {
       text: "Hard",
       weight: 30,
-      icon: "",
+      icon: "https://i.imgur.com/fwrGvNf.png",
     },
     {
       text: "Very Hard",
       weight: 2,
-      icon: "",
+      icon: "https://i.imgur.com/fwrGvNf.png",
     },
     {
       text: "Legendary",
       weight: 1,
-      icon: "",
+      icon: "https://i.imgur.com/fwrGvNf.png",
     },
   ];
 
@@ -901,6 +902,7 @@ function App() {
       if (allowDuplicates === false) {
         dataCopy = dataCopy.filter((d) => selectedData.text !== d.text);
       }
+      selectedData.id=uuid();
       newData.push(selectedData);
       setDataState(newData);
     }
@@ -932,7 +934,7 @@ function App() {
             >
               Match Type
             </Button>
-            <ResultBox idPrefix="match-type" data={matchTypeState} />
+            <ResultBox setData={setMatchTypeState} idPrefix="match-type" data={matchTypeState} />
           </div>
 
           <div className="generator-area">
@@ -951,7 +953,7 @@ function App() {
             >
               Match Location
             </Button>
-            <ResultBox idPrefix="match-location" data={matchLocationState} />
+            <ResultBox setData={setMatchLocationState} idPrefix="match-location" data={matchLocationState} />
           </div>
 
           <div className="generator-area">
@@ -970,7 +972,7 @@ function App() {
             >
               Enemy Type
             </Button>
-            <ResultBox idPrefix="match-enemy" data={matchEnemyState} />
+            <ResultBox setData={setMatchEnemyState} idPrefix="match-enemy" data={matchEnemyState} />
           </div>
 
           <div className="generator-area">
@@ -989,7 +991,7 @@ function App() {
             >
               Equipment Rules
             </Button>
-            <ResultBox idPrefix="match-gear" data={matchGearState} />
+            <ResultBox setData={setMatchGearState} idPrefix="match-gear" data={matchGearState} />
           </div>
 
           <div className="generator-area">
@@ -1008,7 +1010,7 @@ function App() {
             >
               Special Rules
             </Button>
-            <ResultBox idPrefix="match-rules" data={matchRulesState} />
+            <ResultBox setData={setMatchRulesState} idPrefix="match-rules" data={matchRulesState} />
           </div>
 
           <div className="generator-area">
@@ -1027,9 +1029,7 @@ function App() {
             >
               Difficulty
             </Button>
-            <ResultBox
-              idPrefix="match-difficulty"
-              data={matchDifficultyState}
+            <ResultBox setData={setMatchDifficultyState} idPrefix="match-difficulty" data={matchDifficultyState}
             />
           </div>
         </div>
