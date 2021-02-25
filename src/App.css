@@ -89,17 +89,35 @@ body {
   position:absolute;
   display:inline;
   border:2px solid yellow;
+  min-width: 300px;
+  top:-15px;
 }
 
 .lockbox {
   position:relative;
-  display:inline;
+  display:inline-block;
   border:2px solid pink;
+  height:100px;
+  width:120px;
+  padding:10px;
 }
 .locktext {
   position:relative;
-  display:inline;
+  display:inline-block;
   border:2px solid red;
+}
+.lock-confirm {
+  display:inline;
+  position:relative;
+}
+
+.check-box {
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  display: block;
+  left: 5%;
+  top:50%;
 }
 
 

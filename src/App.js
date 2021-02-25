@@ -11,6 +11,7 @@ const ENEMY_TYPE_COUNT = 5;
 const EQUIPMENT_COUNT = 3;
 const RULES_COUNT = 4;
 const DIFFICULTY_COUNT = 5;
+const ICONIC_COUNT = 1;
 
 function App() {
   const [matchTypeState, setMatchTypeState] = React.useState(
@@ -30,6 +31,9 @@ function App() {
   );
   const [matchDifficultyState, setMatchDifficultyState] = React.useState(
     Array(DIFFICULTY_COUNT).fill({})
+  );
+  const [matchIconicState, setMatchIconicState] = React.useState(
+    Array(ICONIC_COUNT).fill({})
   );
 
   let matchType = [
@@ -892,6 +896,128 @@ function App() {
       description: "Recommended XP: 600+",
     },
   ];
+  let matchIconics = [
+    {
+      text: "Darth Vader",
+      weight: 1,
+      icon: "",
+      description: "This will be a day long remembered.",
+    },
+    {
+      text: "Emperor Palpatine",
+      weight: 1,
+      icon: "",
+      description: "DEW ITT",
+    },
+    {
+      text: "Luke Skywalker",
+      weight: 1,
+      icon: "",
+      description: "I am a Jedi, like my father before me.",
+    },
+    {
+      text: "Din Djarin",
+      weight: 1,
+      icon: "",
+      description: "I can bring you in warm, or I can bring you in cold.",
+    },
+    {
+      text: "Ahsoka Tano",
+      weight: 1,
+      icon: "",
+      description: "I am no Jedi.",
+    },
+    {
+      text: "Boba Fett",
+      weight: 1,
+      icon: "",
+      description: "I'm just a simple man making my way through the universe.",
+    },
+    {
+      text: "FN-2187 'Finn'",
+      weight: 1,
+      icon: "",
+      description: "REEYYYYYY!!!",
+    },
+    {
+      text: "Fennec Shand",
+      weight: 1,
+      icon: "",
+      description: "Make the best deal for yourself and survive.",
+    },
+    {
+      text: "Bossk",
+      weight: 1,
+      icon: "",
+      description: "You're just another target.",
+    },
+    {
+      text: "Obi-Wan Kenobi",
+      weight: 1,
+      icon: "",
+      description: "If you define yourself by the power to take life, the desire to dominate, to possess... then you have nothing.",
+    },
+    {
+      text: "Maul",
+      weight: 1,
+      icon: "",
+      description: "You cannot imagine the depths I would go to to stay alive, fueled by my singular hatred... for you!",
+    },
+    {
+      text: "Count Dooku",
+      weight: 1,
+      icon: "",
+      description: "Do control your insolence.",
+    },
+    {
+      text: "Yoda",
+      weight: 1,
+      icon: "",
+      description: "My ally is the Force, and a powerful ally it is.",
+    },
+    {
+      text: "Han Solo",
+      weight: 1,
+      icon: "",
+      description: "I prefer a straight fight to all this sneakin' around.",
+    },
+    {
+      text: "Princess Leia",
+      weight: 1,
+      icon: "",
+      description: "Why, you stuck up, half-witted, scruffy-looking Nerf-herder!",
+    },
+    {
+      text: "Hondo Ohnaka",
+      weight: 1,
+      icon: "",
+      description: "Insolence? We are pirates! We don’t even know what that means!",
+    },
+    {
+      text: "Anakin Skywalker",
+      weight: 1,
+      icon: "",
+      description: "Hey, when I show off, it IS instructive. And inspiring.",
+    },
+    {
+      text: "Asajj Ventress",
+      weight: 1,
+      icon: "",
+      description: "Stand down, and I'll give you a cookie.",
+    },
+    {
+      text: "General Grievous",
+      weight: 1,
+      icon: "",
+      description: "I am the leader of the most powerful droid army the galaxy has ever seen!",
+    },
+    {
+      text: "Darth Revan",
+      weight: 1,
+      icon: "",
+      description: "Honor is a fool's prize. Glory is of no use to the dead.",
+    },
+  ]
 
   const dataRoller = ({ data, setDataState, count, allowDuplicates }) => {
     let dataCopy = [...data];
@@ -985,6 +1111,26 @@ function App() {
             <Button
               variant="secondary"
               size="lg"
+              id="iconic-button"
+              onClick={() =>
+                dataRoller({
+                  allowDuplicates: false,
+                  data: matchIconics,
+                  setDataState: setMatchIconicState,
+                  count: ICONIC_COUNT,
+                })
+              }
+            >
+              Iconic Opponent
+            </Button>
+            <ResultBox setData={setMatchIconicState} idPrefix="match-iconic" data={matchIconicState}
+            />
+          </div>
+
+          <div className="generator-area">
+            <Button
+              variant="secondary"
+              size="lg"
               id="match-equipment-button"
               onClick={() =>
                 dataRoller({
@@ -1038,6 +1184,8 @@ function App() {
             <ResultBox setData={setMatchDifficultyState} idPrefix="match-difficulty" data={matchDifficultyState}
             />
           </div>
+
+          
         </div>
         <div id="results"></div>
       </div>

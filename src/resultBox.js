@@ -41,7 +41,7 @@ export const ResultBox = ({ data, setData }) => {
             <div className="result-line">
                 <div className="lockbox">
                     <div className="locktext">Lock Choice</div>
-                    <input type="checkbox" checked={item.locked} onChange={() => dataLockToggle(item.id)}/>
+                    <input type="checkbox" className="check-box" checked={item.locked} onChange={() => dataLockToggle(item.id)}/>
                     {item.locked && (<div className="lock-confirm">Is locked</div>)}
                 </div>
                 <div
