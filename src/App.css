@@ -71,7 +71,7 @@ body {
   height: auto;
   min-height: 50px;
   color:white !important;
-  /* border:5px red !important; */
+  
   background-color: dimgray !important;
   margin: 10px 0;
   width:40%;
@@ -82,13 +82,11 @@ body {
 .result-line {
   position:relative;
   display:inline;
-  /* border:2px solid green; */
 }
 
 .description-box {
   position:absolute;
   display:inline;
-  /* border:2px solid yellow; */
   min-width: 300px;
   top:-15px;
 }
@@ -96,7 +94,6 @@ body {
 .lockbox {
   position:relative;
   display:inline-block;
-  /* border:2px solid pink; */
   height:100px;
   width:120px;
   padding:10px;
@@ -104,7 +101,6 @@ body {
 .locktext {
   position:relative;
   display:inline-block;
-  /* border:2px solid red; */
 }
 .lock-confirm {
   display:inline;
@@ -126,7 +122,6 @@ body {
   height:600px;
   right:20%;
   position: absolute;
-  /* border: 5px solid pink; */
   display: none;
 }
 .discord-text {
@@ -134,7 +129,6 @@ body {
   height:300px;
   right:15%;
   position: absolute;
-  /* border: 5px solid red; */
   display: none !important;
 }
 
@@ -143,11 +137,9 @@ body {
   height:50%;
   position: absolute;
   display:contents;
-  /* border: 5px solid green; */
 }
 
 #main-area {
-  /* background-color:green; */
   height:600px;
   width:50%;
   left:25%;
@@ -161,7 +153,6 @@ body {
   font-size:2rem;
   margin-left:1rem;
   margin-top:1rem;
-  /* border: 5px solid pink; */
   /* background-color: dimgray; */
 }
 
@@ -174,7 +165,6 @@ body {
 
 
 #text-area {
-  /* border:5px solid orange; */
   display:none;
 }
 
