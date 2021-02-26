@@ -71,7 +71,7 @@ body {
   height: auto;
   min-height: 50px;
   color:white !important;
-  border:5px red !important;
+  /* border:5px red !important; */
   background-color: dimgray !important;
   margin: 10px 0;
   width:40%;
@@ -82,13 +82,13 @@ body {
 .result-line {
   position:relative;
   display:inline;
-  border:2px solid green;
+  /* border:2px solid green; */
 }
 
 .description-box {
   position:absolute;
   display:inline;
-  border:2px solid yellow;
+  /* border:2px solid yellow; */
   min-width: 300px;
   top:-15px;
 }
@@ -96,7 +96,7 @@ body {
 .lockbox {
   position:relative;
   display:inline-block;
-  border:2px solid pink;
+  /* border:2px solid pink; */
   height:100px;
   width:120px;
   padding:10px;
@@ -104,7 +104,7 @@ body {
 .locktext {
   position:relative;
   display:inline-block;
-  border:2px solid red;
+  /* border:2px solid red; */
 }
 .lock-confirm {
   display:inline;
@@ -126,7 +126,7 @@ body {
   height:600px;
   right:20%;
   position: absolute;
-  border: 5px solid pink;
+  /* border: 5px solid pink; */
   display: none;
 }
 .discord-text {
@@ -174,7 +174,7 @@ body {
 
 
 #text-area {
-  border:5px solid orange;
+  /* border:5px solid orange; */
   display:none;
 }
 
