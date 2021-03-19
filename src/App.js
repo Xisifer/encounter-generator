@@ -1107,7 +1107,7 @@ function App() {
         Click the button to obtain a random result from the table in the Combat
         Trials document. This list is only updated by hand, so far.
       </p>
-      <p>Last Update: 2/13/21</p>
+      <p>Last Update: 3/19/21</p>
       <div id="main-area">
         <div className="generator-area">
           {/* MATCH TYPE */}
@@ -1117,12 +1117,12 @@ function App() {
               size="lg"
               id="match-type-button"
               onClick={() => {
-                dataRoller({
+                const dataRolled = dataRoller({
                   allowDuplicates: true,
                   data: matchType,
-                  setDataState: setMatchTypeState,
                   count: ENEMY_TYPE_COUNT,
                 });
+                setMatchTypeState(dataRolled);
               }}
             >
               Match Type
@@ -1143,7 +1143,6 @@ function App() {
                 const dataRolled = dataRoller({
                   allowDuplicates: false,
                   data: matchLocation,
-                  setDataState: setMatchLocationState,
                   count: LOCATION_COUNT,
                 });
                 setMatchLocationState(dataRolled);
@@ -1163,14 +1162,15 @@ function App() {
               variant="secondary"
               size="lg"
               id="enemy-type-button"
-              onClick={() =>
-                dataRoller({
+              onClick={() => {
+                const dataRolled = dataRoller({
                   allowDuplicates: false,
                   data: matchEnemy,
                   setDataState: setMatchEnemyState,
                   count: ENEMY_TYPE_COUNT,
-                })
-              }
+                });
+                setMatchEnemyState(dataRolled);
+              }}
             >
               Enemy Type
             </Button>
@@ -1186,14 +1186,15 @@ function App() {
               variant="secondary"
               size="lg"
               id="iconic-button"
-              onClick={() =>
-                dataRoller({
+              onClick={() => {
+                const dataRolled = dataRoller({
                   allowDuplicates: false,
                   data: matchIconics,
                   setDataState: setMatchIconicState,
                   count: ICONIC_COUNT,
-                })
-              }
+                });
+                setMatchIconicState(dataRolled);
+              }}
             >
               Iconic Opponent
             </Button>
@@ -1241,14 +1242,15 @@ function App() {
               variant="secondary"
               size="lg"
               id="match-equipment-button"
-              onClick={() =>
-                dataRoller({
+              onClick={() => {
+                const dataRolled = dataRoller({
                   allowDuplicates: false,
                   data: matchGear,
                   setDataState: setMatchGearState,
                   count: EQUIPMENT_COUNT,
-                })
-              }
+                });
+                setMatchGearState(dataRolled);
+              }}
             >
               Equipment Rules
             </Button>
@@ -1264,14 +1266,15 @@ function App() {
               variant="secondary"
               size="lg"
               id="rules-button"
-              onClick={() =>
-                dataRoller({
+              onClick={() => {
+                const dataRolled = dataRoller({
                   allowDuplicates: false,
                   data: matchRules,
                   setDataState: setMatchRulesState,
                   count: RULES_COUNT,
-                })
-              }
+                });
+                setMatchRulesState(dataRolled);
+              }}
             >
               Special Rules
             </Button>
@@ -1287,14 +1290,15 @@ function App() {
               variant="secondary"
               size="lg"
               id="rules-button"
-              onClick={() =>
-                dataRoller({
+              onClick={() => {
+                const dataRolled = dataRoller({
                   allowDuplicates: true,
                   data: matchDifficulty,
                   setDataState: setMatchDifficultyState,
                   count: DIFFICULTY_COUNT,
-                })
-              }
+                });
+                setMatchDifficultyState(dataRolled);
+              }}
             >
               Difficulty
             </Button>

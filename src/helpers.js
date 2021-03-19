@@ -12,7 +12,7 @@ export const foeRoller = ({
 
 // See if I can pull dataState out of this, and put it into App.js
 
-export const dataRoller = ({ data, setDataState, count, allowDuplicates }) => {
+export const dataRoller = ({ data, count, allowDuplicates }) => {
   let dataCopy = [];
   let newData = [];
 
@@ -29,6 +29,6 @@ export const dataRoller = ({ data, setDataState, count, allowDuplicates }) => {
     }
     selectedData.id = uuid();
     newData.push(selectedData);
-    return newData;
   }
+  return newData;
 };
