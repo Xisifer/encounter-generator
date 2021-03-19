@@ -74,6 +74,7 @@ function App() {
                   allowDuplicates: true,
                   data: matchType,
                   count: ENEMY_TYPE_COUNT,
+                  currentData: matchTypeState,
                 });
                 setMatchTypeState(dataRolled);
               }}
@@ -97,6 +98,7 @@ function App() {
                   allowDuplicates: false,
                   data: matchLocation,
                   count: LOCATION_COUNT,
+                  currentData: matchLocationState,
                 });
                 setMatchLocationState(dataRolled);
               }}
@@ -121,6 +123,7 @@ function App() {
                   data: matchEnemy,
                   setDataState: setMatchEnemyState,
                   count: ENEMY_TYPE_COUNT,
+                  currentData: matchEnemyState,
                 });
                 setMatchEnemyState(dataRolled);
               }}
@@ -201,6 +204,7 @@ function App() {
                   data: matchGear,
                   setDataState: setMatchGearState,
                   count: EQUIPMENT_COUNT,
+                  currentData: matchGearState,
                 });
                 setMatchGearState(dataRolled);
               }}
@@ -225,6 +229,7 @@ function App() {
                   data: matchRules,
                   setDataState: setMatchRulesState,
                   count: RULES_COUNT,
+                  currentData: matchRulesState,
                 });
                 setMatchRulesState(dataRolled);
               }}
@@ -249,6 +254,7 @@ function App() {
                   data: matchDifficulty,
                   setDataState: setMatchDifficultyState,
                   count: DIFFICULTY_COUNT,
+                  currentData: matchDifficultyState,
                 });
                 setMatchDifficultyState(dataRolled);
               }}

@@ -17,22 +17,21 @@ import React from "react";
 //     </Popover>
 //     )
 
-export const ResultBox = ({ data, setData }) => {
-  const dataLockToggle = (id) => {
-    const index = data.findIndex((d) => d.id === id);
-    const newDataPoint = data[index];
-    newDataPoint.locked = !newDataPoint.locked;
-    // const newDataPoint = {
-    //     ...data[index],
-    //     locked:!data[index].locked
-    // }
-    const newData = data
-      .slice(0, index)
-      .concat(newDataPoint)
-      .concat(data.slice(index + 1));
-    setData(newData);
-  };
+export const dataLockToggle = ({ id, data }) => {
+  const index = data.findIndex((d) => d.id === id);
+  const newDataPoint = { ...data[index] };
+  newDataPoint.locked = !newDataPoint.locked;
+  // const newDataPoint = {
+  //     ...data[index],
+  //     locked:!data[index].locked
+  // }
+  return data
+    .slice(0, index)
+    .concat(newDataPoint)
+    .concat(data.slice(index + 1));
+};
 
+export const ResultBox = ({ data, setData }) => {
   return (
     <div className="result-box">
       <div className="list-group">
@@ -44,8 +43,11 @@ export const ResultBox = ({ data, setData }) => {
                 <input
                   type="checkbox"
                   className="check-box"
-                  checked={item.locked}
-                  onChange={() => dataLockToggle(item.id)}
+                  checked={!!item.locked}
+                  onChange={() => {
+                    const newData = dataLockToggle({ id: item.id, data });
+                    setData(newData);
+                  }}
                 />
                 {item.locked && <div className="lock-confirm">Is locked</div>}
               </div>
