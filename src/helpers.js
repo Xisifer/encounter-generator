@@ -13,22 +13,26 @@ export const foeRoller = ({
 // See if I can pull dataState out of this, and put it into App.js
 
 export const dataRoller = ({ data, count, allowDuplicates }) => {
-  let dataCopy = [];
+  let weightedData = [];
   let newData = [];
 
   for (let i = 0; i < data.length; i++) {
     for (let j = 0; j < data[i].weight; j++) {
-      dataCopy.push(data[i]);
+      weightedData.push(data[i]);
     }
   }
+
   for (let i = 0; i < count; i++) {
-    const index = Math.floor(Math.random() * dataCopy.length);
-    let selectedData = dataCopy[index];
-    if (allowDuplicates === false) {
-      dataCopy = dataCopy.filter((d) => selectedData.text !== d.text);
+    if (weightedData.length) {
+      const index = Math.floor(Math.random() * weightedData.length);
+      let selectedData = { ...weightedData[index] };
+      if (allowDuplicates === false) {
+        weightedData = weightedData.filter((d) => selectedData.text !== d.text);
+      }
+      selectedData.id = uuid();
+      newData.push(selectedData);
     }
-    selectedData.id = uuid();
-    newData.push(selectedData);
   }
+
   return newData;
 };
