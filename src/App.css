@@ -114,6 +114,8 @@ body {
   display: block;
   left: 5%;
   top:50%;
+  width: 100%;
+  height: 30px;
 }
 
 
