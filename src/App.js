@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { ResultBox } from "./resultBox";
 import {
   matchType,
@@ -162,9 +162,9 @@ function App() {
           </div>
           {/* PERSONAL FOE ROLLER */}
           <div className="generator-area">
-            Chance for Rival Foe
+            <h3>Chance for Rival Foe</h3>
             <br />
-            % Roller
+            Number of Players in Encounter:
             <br />
             <input
               type="number"
@@ -187,9 +187,8 @@ function App() {
               Roll
             </Button>
             <br />
-            Personal Foe Spawned?{" "}
+            <h4>Personal Foe Spawned?</h4>
             {didFoeSpawn !== undefined && (didFoeSpawn ? "Yes" : "No")}
-            Number of players?
           </div>
           <br />
           {/* GEAR RULES */}

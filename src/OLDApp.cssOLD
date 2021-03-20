@@ -1,0 +1,167 @@
+.App {
+  text-align: center;
+
+}
+
+@font-face
+{
+  font-family: "SWfont";
+  src: url('./fonts/SWfont.ttf') format('truetype');
+}
+
+body {
+  font-family:'SWfont';
+  background-color:rgb(54,57,53) !important;
+  color:white !important;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.result-box {
+  display: flex;
+  position: relative;
+  padding:15px;
+  width:100%;
+  margin: 0 auto;
+  
+}
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: .25rem;
+  width:100%
+}
+.result-item {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  height: auto;
+  min-height: 50px;
+  color:white !important;
+  
+  background-color: dimgray !important;
+  margin: 10px 0;
+  width:40%;
+  display:inline-block;
+  padding:20px;
+}
+
+.result-line {
+  position:relative;
+  display:flex;
+  justify-content: center;
+}
+
+.description-box {
+  max-width: 300px;
+}
+
+.lockbox {
+  position:relative;
+  display:flex;
+  height:100px;
+  width:120px;
+  padding:10px;
+  justify-content: space-around;
+  align-items: center;
+}
+.locktext {
+  position:relative;
+  display:inline-block;
+}
+.lock-confirm {
+  display:inline;
+  position:relative;
+}
+
+
+#results {
+  width:40%;
+  height:600px;
+  right:20%;
+  position: absolute;
+  display: none;
+}
+.discord-text {
+  width:20%;
+  height:300px;
+  right:15%;
+  position: absolute;
+  display: none !important;
+}
+
+.generator-area {
+  width:100%;
+  height:50%;
+  position: absolute;
+  display:contents;
+}
+
+#main-area {
+  height:600px;
+  width:50%;
+  left:25%;
+  position:relative;
+}
+
+
+
+.result {
+  display: inline;
+  font-size:2rem;
+  margin-left:1rem;
+  margin-top:1rem;
+  /* background-color: dimgray; */
+}
+
+.btn {
+  display:grid;
+  height:max-content;
+}
+
+
+
+
+#text-area {
+  display:none;
+}
+
+
+.button-group {
+  display:inline;
+}
