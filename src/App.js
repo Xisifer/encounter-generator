@@ -162,9 +162,9 @@ function App() {
           </div>
           {/* PERSONAL FOE ROLLER */}
           <div className="generator-area">
-            Chance for Rival Foe
+            <h3>Chance for Rival Foe: 20% x Player Count</h3>
             <br />
-            % Roller
+            Number of Players in Encounter:
             <br />
             <input
               type="number"
@@ -187,9 +187,8 @@ function App() {
               Roll
             </Button>
             <br />
-            Personal Foe Spawned?{" "}
+            <h4>Personal Foe Spawned?</h4>
             {didFoeSpawn !== undefined && (didFoeSpawn ? "Yes" : "No")}
-            Number of players?
           </div>
           <br />
           {/* GEAR RULES */}
