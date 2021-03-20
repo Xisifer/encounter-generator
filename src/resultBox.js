@@ -49,7 +49,7 @@ export const ResultBox = ({ data, setData }) => {
                     setData(newData);
                   }}
                 />
-                {item.locked && <div className="lock-confirm">Is locked</div>}
+                {/* {item.locked && <div className="lock-confirm">Is locked</div>} */}
               </div>
               <div className="result-item">{item.text}</div>
               <div className="description-box">{item.description}</div>
