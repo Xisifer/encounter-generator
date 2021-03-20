@@ -13,4 +13,10 @@ body {
   font-family:'SWfont';
   background-color:rgb(54,57,53) !important;
   color:white !important;
+  
+}
+@layer utilities {
+    .btn {
+        border: 5px solid red;
+    }
 }
