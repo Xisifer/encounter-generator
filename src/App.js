@@ -162,7 +162,7 @@ function App() {
           </div>
           {/* PERSONAL FOE ROLLER */}
           <div className="generator-area">
-            <h3>Chance for Rival Foe: 20% x Player Count</h3>
+            <h3>Chance for Rival Foe: 10% x Player Count</h3>
             <br />
             Number of Players in Encounter:
             <br />

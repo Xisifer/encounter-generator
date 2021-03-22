@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 export const foeRoller = ({
   playerCount,
   initialChance = 0.05,
-  spawnRatePerPlayer = 0.2,
+  spawnRatePerPlayer = 0.1,
 }) => {
   let diceRoll = Math.random();
   const spawnChance = initialChance + playerCount * spawnRatePerPlayer;
