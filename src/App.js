@@ -53,6 +53,8 @@ function App() {
 
   const [didFoeSpawn, setDidFoeSpawn] = React.useState();
 
+  const [foeSpawnRoll, setFoeSpawnRoll] = React.useState();
+
   return (
     <div className="App">
       <h1>Combat Trials Encounter Randomizer!</h1>
