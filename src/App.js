@@ -13,7 +13,12 @@ import {
   matchRules,
 } from "./data";
 
-import { foeRoller, dataRoller } from "./helpers";
+import {
+  foeRoller,
+  dataRoller,
+  displayFoeDiceRoll,
+  calcSpawnChance,
+} from "./helpers";
 
 const LOCATION_COUNT = 3;
 const MATCH_TYPE_COUNT = 5;
@@ -332,8 +337,14 @@ function App() {
             </Button>
             <br />
             <h4>Personal Foe Spawned?</h4>
-            {foeSpawnData.foeDidSpawn !== null &&
-              (foeSpawnData.foeDidSpawn ? "Yes" : "No")}
+            {displayFoeDiceRoll({
+              foeDidSpawn: foeSpawnData.foeDidSpawn,
+              diceRoll: foeSpawnData.rolledValue,
+              spawnChance: calcSpawnChance({
+                playerCount: foeSpawnData.playerCount,
+                spawnRatePerPlayer: foeSpawnData.spawnRatePerPlayer,
+              }),
+            })}
           </div>
         </div>
       </div>

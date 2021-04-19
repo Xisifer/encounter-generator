@@ -1,18 +1,25 @@
 import { v4 as uuid } from "uuid";
 
-export const foeRoller = ({
-  playerCount,
-  initialChance = 5,
-  spawnRatePerPlayer = 10,
-}) => {
-  let diceRoll = Math.random() * 100 + 1;
-  // let readableDice = Math.random(Math.floor + 1);
+export const calcSpawnChance = ({ playerCount, spawnRatePerPlayer }) => {
+  return playerCount * spawnRatePerPlayer;
+};
 
-  const spawnChance = initialChance + playerCount * spawnRatePerPlayer;
+export const foeRoller = ({ playerCount, spawnRatePerPlayer = 10 }) => {
+  let diceRoll = Math.random() * 100;
+
+  const spawnChance = calcSpawnChance({ playerCount, spawnRatePerPlayer });
   return {
     didSpawn: spawnChance >= diceRoll,
     diceRoll,
   };
+};
+
+export const displayFoeDiceRoll = ({ foeDidSpawn, diceRoll, spawnChance }) => {
+  if (foeDidSpawn === null) {
+    return null;
+  }
+  const yesOrNo = foeDidSpawn ? "Yes" : "No";
+  return `${yesOrNo} (Result: ${diceRoll.toFixed(0)}, Chance: ${spawnChance})`;
 };
 
 export const dataRoller = ({ data, count, allowDuplicates, currentData }) => {
