@@ -2,18 +2,18 @@ import { v4 as uuid } from "uuid";
 
 export const foeRoller = ({
   playerCount,
-  initialChance = 0.05,
-  spawnRatePerPlayer = 0.1,
+  initialChance = 5,
+  spawnRatePerPlayer = 10,
 }) => {
-  let diceRoll = Math.random();
-  let readableDice = Math.random(Math.floor + 1);
-  const spawnChance = initialChance + playerCount * spawnRatePerPlayer;
-  console.log(diceRoll);
-  console.log(readableDice);
-  return spawnChance >= diceRoll;
-};
+  let diceRoll = Math.random() * 100 + 1;
+  // let readableDice = Math.random(Math.floor + 1);
 
-// See if I can pull dataState out of this, and put it into App.js
+  const spawnChance = initialChance + playerCount * spawnRatePerPlayer;
+  return {
+    didSpawn: spawnChance >= diceRoll,
+    diceRoll,
+  };
+};
 
 export const dataRoller = ({ data, count, allowDuplicates, currentData }) => {
   let weightedData = [];

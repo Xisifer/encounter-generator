@@ -49,11 +49,50 @@ function App() {
   //   Array(RANDOM_COUNT).fill({})
   // );
 
-  const [playerCount, setPlayerCount] = React.useState(1);
+  // const [playerCount, setPlayerCount] = React.useState(1);
 
-  const [didFoeSpawn, setDidFoeSpawn] = React.useState();
+  const initialState = {
+    playerCount: 1,
+    rolledValue: 0,
+    spawnRatePerPlayer: 10,
+    foeDidSpawn: null,
+  };
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "set-player-count": {
+        return {
+          ...state,
+          playerCount: action.playerCount,
+        };
+      }
+      case "set-spawn-rate": {
+        return {
+          ...state,
+          spawnRatePerPlayer: action.spawnRatePerPlayer,
+        };
+      }
+      case "roll": {
+        const { didSpawn, diceRoll } = foeRoller({
+          playerCount: state.playerCount,
+          spawnRatePerPlayer: state.spawnRatePerPlayer,
+        });
+        return {
+          ...state,
+          rolledValue: diceRoll,
+          foeDidSpawn: didSpawn,
+        };
+      }
+      default:
+        return state;
+    }
+  };
 
-  const [foeSpawnRoll, setFoeSpawnRoll] = React.useState();
+  const [foeSpawnData, dispatchFoeSpawnData] = React.useReducer(
+    reducer,
+    initialState
+  );
+
+  // const [foeSpawnRoll, setFoeSpawnRoll] = React.useState();
 
   return (
     <div className="App">
@@ -244,19 +283,40 @@ function App() {
               data={matchDifficultyState}
             />
           </div>
-        </div>
-        <div className="flex">
           {/* PERSONAL FOE ROLLER */}
-          <div className="w-1/2">
-            <h3>Chance for Rival Foe: 10% x Player Count</h3>
+          <div className="pt-8 w-1/2 pl-8">
+            <h3>Chance for Rival Foe: </h3>
+            <div className="flex">
+              <input
+                type="number"
+                min="1"
+                max="100"
+                className="text-black"
+                value={foeSpawnData.spawnRatePerPlayer}
+                onChange={(event) => {
+                  dispatchFoeSpawnData({
+                    type: "set-spawn-rate",
+                    spawnRatePerPlayer: parseInt(event.target.value),
+                  });
+                }}
+              />
+              <p>%</p>
+              <h3 className="pl-1"> * Player Count</h3>
+            </div>
             <br />
             Number of Players in Encounter:
             <br />
             <input
               type="number"
-              value={playerCount}
+              className="text-black"
+              min="1"
+              max="99"
+              value={foeSpawnData.playerCount}
               onChange={(event) => {
-                setPlayerCount(parseInt(event.target.value));
+                dispatchFoeSpawnData({
+                  type: "set-player-count",
+                  playerCount: parseInt(event.target.value),
+                });
               }}
             />
             <Button
@@ -264,17 +324,16 @@ function App() {
               size="lg"
               id="precent-button"
               onClick={() => {
-                const foeSpawned = foeRoller({
-                  playerCount,
-                });
-                setDidFoeSpawn(foeSpawned);
+                dispatchFoeSpawnData({ type: "roll" });
+                // setFoeSpawnData(foeSpawned);
               }}
             >
               Roll
             </Button>
             <br />
             <h4>Personal Foe Spawned?</h4>
-            {didFoeSpawn !== undefined && (didFoeSpawn ? "Yes" : "No")}
+            {foeSpawnData.foeDidSpawn !== null &&
+              (foeSpawnData.foeDidSpawn ? "Yes" : "No")}
           </div>
         </div>
       </div>
