@@ -6,7 +6,10 @@ export const foeRoller = ({
   spawnRatePerPlayer = 0.1,
 }) => {
   let diceRoll = Math.random();
+  let readableDice = Math.random(Math.floor + 1);
   const spawnChance = initialChance + playerCount * spawnRatePerPlayer;
+  console.log(diceRoll);
+  console.log(readableDice);
   return spawnChance >= diceRoll;
 };
 
