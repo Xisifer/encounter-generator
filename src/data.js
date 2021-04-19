@@ -69,7 +69,7 @@ const matchType = [
     weight: 2,
 
     description:
-      "(Two teams, chosen by random draw! One ball, greased as a slippery Hutt! Weapons, name-calling, and cheating are all encouraged! Let's play Huttball!)",
+      "(Two teams, chosen by random draw! One ball, slippery as a greased Hutt! Weapons, name-calling, and cheating are all encouraged! Let's play Huttball!)",
   },
   {
     text: "Foot Race",
@@ -1032,20 +1032,30 @@ const matchIconics = [
     text: "Asajj Ventress",
     weight: 1,
 
-    description: "Stand down, and I'll give you a cookie.",
+    description:
+      "It's only the likes of me, with nothing to lose, who'll really be prepared to tear the galaxy down and start over.",
   },
   {
     text: "General Grievous",
     weight: 1,
 
-    description:
-      "I am the leader of the most powerful droid army the galaxy has ever seen!",
+    description: "I will grant you a warrior’s death. Prepare!”",
   },
   {
     text: "Darth Revan",
     weight: 1,
 
     description: "Honor is a fool's prize. Glory is of no use to the dead.",
+  },
+  {
+    text: "Cal Kestis",
+    weight: 1,
+    description: "I had a bad feeling I'd see you here.",
+  },
+  {
+    text: "Inquisitor Kestis",
+    weight: 1,
+    description: "Like you said... I'm persistent.",
   },
 ];
 export {

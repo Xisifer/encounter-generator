@@ -33,10 +33,10 @@ export const dataLockToggle = ({ id, data }) => {
 
 export const ResultBox = ({ data, setData }) => {
   return (
-    <div className="flex flex-col">
+    <div className="border-2">
       {data.map((item) => (
-        <div className="flex" key={item.id}>
-          <div className="pr-12">
+        <div className="h-32 flex" key={item.id}>
+          <div className="pr-12 w-1/12">
             <div className="locktext">Lock</div>
             <input
               type="checkbox"
@@ -49,8 +49,10 @@ export const ResultBox = ({ data, setData }) => {
             />
             {/* {item.locked && <div className="lock-confirm">Is locked</div>} */}
           </div>
-          <div className="px-12">{item.text}</div>
-          <div className="pl-12 w-1/4">{item.description}</div>
+          <div className="w-1/4 pt-6">
+            <div className="px-12">{item.text}</div>
+          </div>
+          <div className="w-8/12 border pt-6">{item.description}</div>
         </div>
       ))}
     </div>
