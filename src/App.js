@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { ResultBox } from "./resultBox";
 import {
   matchType,
@@ -62,11 +62,11 @@ function App() {
         Click the button to obtain a random result from the table in the Combat
         Trials document. This list is only updated by hand, so far.
       </p>
-      <p>Last Update: 3/19/21</p>
-      <div id="main-area">
-        <div className="generator-area">
+      <p>Last Update: 4/18/21</p>
+      <div className="px-10">
+        <div className="flex">
           {/* MATCH TYPE */}
-          <div className="button-group">
+          <div className="w-1/2">
             <Button
               variant="secondary"
               size="lg"
@@ -90,7 +90,7 @@ function App() {
             />
           </div>
           {/* MATCH LOCATION */}
-          <div className="generator-area">
+          <div className="pl-8 w-1/2">
             <Button
               variant="secondary"
               size="lg"
@@ -113,8 +113,11 @@ function App() {
               data={matchLocationState}
             />
           </div>
+        </div>
+        {/* //////////////////////////// */}
+        <div className="flex">
           {/* ENEMY TYPE */}
-          <div className="generator-area">
+          <div className="w-1/2">
             <Button
               variant="secondary"
               size="lg"
@@ -139,7 +142,7 @@ function App() {
             />
           </div>
           {/* ICONIC OPPONENT */}
-          <div className="generator-area">
+          <div className="w-1/2 pl-8">
             <Button
               variant="secondary"
               size="lg"
@@ -162,8 +165,89 @@ function App() {
               data={matchIconicState}
             />
           </div>
+        </div>
+        <div className="flex">
+          {/* GEAR RULES */}
+          <div className="w-1/2">
+            <Button
+              variant="secondary"
+              size="lg"
+              id="match-equipment-button"
+              onClick={() => {
+                const dataRolled = dataRoller({
+                  allowDuplicates: false,
+                  data: matchGear,
+                  setDataState: setMatchGearState,
+                  count: EQUIPMENT_COUNT,
+                  currentData: matchGearState,
+                });
+                setMatchGearState(dataRolled);
+              }}
+            >
+              Equipment Rules
+            </Button>
+            <ResultBox
+              setData={setMatchGearState}
+              idPrefix="match-gear"
+              data={matchGearState}
+            />
+          </div>
+          {/* SPECIAL RULES */}
+          <div className="pl-8 w-1/2">
+            <Button
+              variant="secondary"
+              size="lg"
+              id="rules-button"
+              onClick={() => {
+                const dataRolled = dataRoller({
+                  allowDuplicates: false,
+                  data: matchRules,
+                  setDataState: setMatchRulesState,
+                  count: RULES_COUNT,
+                  currentData: matchRulesState,
+                });
+                setMatchRulesState(dataRolled);
+              }}
+            >
+              Special Rules
+            </Button>
+            <ResultBox
+              setData={setMatchRulesState}
+              idPrefix="match-rules"
+              data={matchRulesState}
+            />
+          </div>
+        </div>
+        <div className="flex">
+          {/* DIFFICULTY */}
+          <div className="w-1/2">
+            <Button
+              variant="secondary"
+              size="lg"
+              id="rules-button"
+              onClick={() => {
+                const dataRolled = dataRoller({
+                  allowDuplicates: true,
+                  data: matchDifficulty,
+                  setDataState: setMatchDifficultyState,
+                  count: DIFFICULTY_COUNT,
+                  currentData: matchDifficultyState,
+                });
+                setMatchDifficultyState(dataRolled);
+              }}
+            >
+              Difficulty
+            </Button>
+            <ResultBox
+              setData={setMatchDifficultyState}
+              idPrefix="match-difficulty"
+              data={matchDifficultyState}
+            />
+          </div>
+        </div>
+        <div className="flex">
           {/* PERSONAL FOE ROLLER */}
-          <div className="generator-area">
+          <div className="w-1/2">
             <h3>Chance for Rival Foe: 10% x Player Count</h3>
             <br />
             Number of Players in Encounter:
@@ -192,84 +276,7 @@ function App() {
             <h4>Personal Foe Spawned?</h4>
             {didFoeSpawn !== undefined && (didFoeSpawn ? "Yes" : "No")}
           </div>
-          <br />
-          {/* GEAR RULES */}
-          <div className="generator-area">
-            <Button
-              variant="secondary"
-              size="lg"
-              id="match-equipment-button"
-              onClick={() => {
-                const dataRolled = dataRoller({
-                  allowDuplicates: false,
-                  data: matchGear,
-                  setDataState: setMatchGearState,
-                  count: EQUIPMENT_COUNT,
-                  currentData: matchGearState,
-                });
-                setMatchGearState(dataRolled);
-              }}
-            >
-              Equipment Rules
-            </Button>
-            <ResultBox
-              setData={setMatchGearState}
-              idPrefix="match-gear"
-              data={matchGearState}
-            />
-          </div>
-          {/* SPECIAL RULES */}
-          <div className="generator-area">
-            <Button
-              variant="secondary"
-              size="lg"
-              id="rules-button"
-              onClick={() => {
-                const dataRolled = dataRoller({
-                  allowDuplicates: false,
-                  data: matchRules,
-                  setDataState: setMatchRulesState,
-                  count: RULES_COUNT,
-                  currentData: matchRulesState,
-                });
-                setMatchRulesState(dataRolled);
-              }}
-            >
-              Special Rules
-            </Button>
-            <ResultBox
-              setData={setMatchRulesState}
-              idPrefix="match-rules"
-              data={matchRulesState}
-            />
-          </div>
-          {/* DIFFICULTY */}
-          <div className="generator-area">
-            <Button
-              variant="secondary"
-              size="lg"
-              id="rules-button"
-              onClick={() => {
-                const dataRolled = dataRoller({
-                  allowDuplicates: true,
-                  data: matchDifficulty,
-                  setDataState: setMatchDifficultyState,
-                  count: DIFFICULTY_COUNT,
-                  currentData: matchDifficultyState,
-                });
-                setMatchDifficultyState(dataRolled);
-              }}
-            >
-              Difficulty
-            </Button>
-            <ResultBox
-              setData={setMatchDifficultyState}
-              idPrefix="match-difficulty"
-              data={matchDifficultyState}
-            />
-          </div>
         </div>
-        <div id="results"></div>
       </div>
     </div>
   );
