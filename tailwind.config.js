@@ -6,7 +6,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+      sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+      header: ['"Archivo Black"', ...defaultTheme.fontFamily.serif],
     },
     colors: {
       white: colors.white,

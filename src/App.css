@@ -4,6 +4,11 @@
 @tailwind utilities;
 
 @layer utilities {
+  h1 {
+    @apply uppercase;
+    @apply text-3xl;
+  }
+
   .btn {
     border: 2px solid lightblue;
     border-radius: 5px;

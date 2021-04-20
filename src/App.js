@@ -101,7 +101,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Combat Trials Encounter Randomizer!</h1>
+      <h1 className="text-center uppercase py-4">
+        Combat Trials Encounter Randomizer
+      </h1>
       <p>
         Click the button to obtain a random result from the table in the Combat
         Trials document. This list is only updated by hand, so far.
