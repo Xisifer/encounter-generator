@@ -3,23 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "SWfont";
-  src: url("./fonts/SWfont.ttf") format("truetype");
-}
-
-body {
-  font-family: "SWfont";
-  /* background-color:rgb(54,57,53) !important; */
-  color: white !important;
-}
 @layer utilities {
   .btn {
     border: 2px solid lightblue;
     border-radius: 5px;
     @apply p-3;
     @apply bg-gray-700;
-
     @apply hover:bg-gray-500;
   }
 
