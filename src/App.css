@@ -5,6 +5,7 @@
 
 @layer utilities {
   h1 {
+    @apply font-header;
     @apply uppercase;
     @apply text-3xl;
   }
