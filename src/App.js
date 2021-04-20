@@ -159,7 +159,7 @@ function App() {
           </div>
         </div>
         {/* //////////////////////////// */}
-        <div className="flex">
+        <div className="flex pt-6">
           {/* ENEMY TYPE */}
           <div className="w-1/2">
             <Button
@@ -210,7 +210,7 @@ function App() {
             />
           </div>
         </div>
-        <div className="flex">
+        <div className="flex pt-6">
           {/* GEAR RULES */}
           <div className="w-1/2">
             <Button
@@ -265,6 +265,7 @@ function App() {
         <div className="flex">
           {/* DIFFICULTY */}
           <div className="w-1/2">
+            <h3>Difficulty</h3>
             <Button
               variant="secondary"
               size="lg"
@@ -280,8 +281,9 @@ function App() {
                 setMatchDifficultyState(dataRolled);
               }}
             >
-              Difficulty
+              Roll
             </Button>
+
             <ResultBox
               setData={setMatchDifficultyState}
               idPrefix="match-difficulty"
@@ -289,7 +291,7 @@ function App() {
             />
           </div>
           {/* PERSONAL FOE ROLLER */}
-          <div className="pt-8 w-1/2 pl-8">
+          <div className="border-2 mt-14 w-1/2 ml-8 p-8">
             <h3>Chance for Rival Foe: </h3>
             <div className="flex">
               <input
